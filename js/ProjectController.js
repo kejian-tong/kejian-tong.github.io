@@ -1,4 +1,7 @@
 // Content of ProjectController.js
+
+console.log("ProjectController loaded");
+
 class ProjectController {
   constructor() {
     this.projects = [];
