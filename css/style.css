@@ -1,0 +1,188 @@
+/* Reset some basic elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  background-color: #0056b3;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1,
+header p {
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+/* Section styles */
+section {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+/* Skills list */
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  background-color: #eee;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Projects cards */
+.card {
+  background: #ffffff;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #0056b3;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.card a:hover {
+  background-color: #004494;
+}
+
+/* Contact form */
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+form button {
+  background-color: #0056b3;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #004494;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive Design Enhancements */
+@media only screen and (max-width: 768px) {
+  /* Adjust padding and text size for smaller screens */
+  header {
+    padding: 10px 0;
+  }
+
+  header h1,
+  header p {
+    padding: 0.3em;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  .card,
+  form {
+    padding: 15px;
+  }
+
+  ul li {
+    padding: 8px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Further adjustments for very small screens like mobile phones */
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  header p,
+  h2 {
+    font-size: 1em;
+  }
+
+  .card a,
+  form button {
+    padding: 8px 10px;
+    font-size: 0.9em;
+  }
+
+  form label,
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    font-size: 0.9em;
+  }
+}
+
+/* Ensure images are scalable and do not exceed their container's width */
+img {
+  max-width: 100%;
+  height: auto;
+}
