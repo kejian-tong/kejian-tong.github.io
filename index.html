@@ -41,15 +41,23 @@
 
     <section id="contact">
       <h2>Contact Me</h2>
-      <form method="post">
+      <form action="https://formspree.io/f/mnqebpja" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required />
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="_replyto" required />
 
         <label for="message">Message:</label>
         <textarea id="message" name="message" required></textarea>
+
+        <!-- Hidden input to help Formspree identify your form -->
+        <input
+          type="hidden"
+          name="_subject"
+          value="New submission from your_website_name!"
+        />
+        <input type="text" name="_gotcha" style="display: none" />
 
         <button type="submit">Send</button>
       </form>
