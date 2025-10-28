@@ -9,3 +9,12 @@ coverage
 npm-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+.eslintcache
+.parcel-cache
+.cache
+.turbo
+.idea
+.vscode
+.npmrc
+*.local
+*.log
