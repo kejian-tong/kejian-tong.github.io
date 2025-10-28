@@ -70,8 +70,26 @@ export default function ContactSection() {
       );
       toast.success("Thanks! Your message has been sent.");
       setForm({ name: "", email: "", title: "", message: "", company: "" });
-    } catch (err) {
-      toast.error("Unable to send right now. Please email me directly.");
+    } catch (err: any) {
+      // Improve diagnostics: surface common EmailJS errors
+      const msg: string =
+        (typeof err === "object" && (err?.text || err?.message)) || "";
+      if (msg.includes("origin") || msg.includes("Origin is not allowed")) {
+        toast.error(
+          "EmailJS blocked this domain. Add your site URL to Allowed Origins in EmailJS settings."
+        );
+      } else if (msg.includes("template") || msg.includes("service")) {
+        toast.error(
+          "EmailJS service/template mismatch. Check Service ID, Template ID, and variables."
+        );
+      } else {
+        toast.error("Unable to send right now. Please email me directly.");
+      }
+      if (typeof window !== "undefined") {
+        // Log raw error for debugging in browser console without exposing to users
+        // eslint-disable-next-line no-console
+        console.error("EmailJS send error:", err);
+      }
     } finally {
       setSubmitting(false);
     }
