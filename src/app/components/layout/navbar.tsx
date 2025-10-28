@@ -74,13 +74,6 @@ export default function Navbar() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <Link
-              href={personalData.resumeUrl}
-              target="_blank"
-              className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/20"
-            >
-              Resume
-            </Link>
             <ThemeToggle />
           </div>
         </div>
@@ -120,15 +113,7 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
-          <div className="mt-6 flex items-center justify-between gap-4">
-            <Link
-              href={personalData.resumeUrl}
-              target="_blank"
-              className="flex-1 rounded-full bg-white/10 px-4 py-2 text-center text-sm font-medium text-white transition hover:bg-white/20"
-              onClick={() => setOpen(false)}
-            >
-              Download Resume
-            </Link>
+          <div className="mt-6 flex items-center justify-end gap-4">
             <ThemeToggle />
           </div>
         </div>

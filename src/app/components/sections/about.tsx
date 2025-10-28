@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { personalData } from "@/utils/data/personal-data";
 import { contactsData } from "@/utils/data/contacts-data";
@@ -20,7 +19,7 @@ const quickFacts = [
 export default function AboutSection() {
   return (
     <section id="about" className="relative mt-24 scroll-mt-24">
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+  <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/60">
             About
@@ -72,39 +71,29 @@ export default function AboutSection() {
           ) : null}
         </div>
         <div className="relative">
-          <div className="card-shadow relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-black/40">
-            <Image
-              src={personalData.profileImage}
-              alt={personalData.name}
-              width={700}
-              height={700}
-              className="h-full w-full object-cover"
-              priority
-            />
-            <div className="absolute inset-x-0 bottom-0 space-y-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-6 pb-6 pt-16">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/50">
-                Quick facts
-              </p>
-              <div className="grid grid-cols-1 gap-3 text-sm text-white/80">
-                {quickFacts.map((fact) => (
-                  <div
-                    key={fact.label}
-                    className="flex items-center justify-between gap-4"
-                  >
-                    <span className="text-white/60">{fact.label}</span>
-                    {fact.href ? (
-                      <Link
-                        href={fact.href}
-                        className="font-medium text-white transition hover:text-highlight"
-                      >
-                        {fact.value}
-                      </Link>
-                    ) : (
-                      <span className="font-medium">{fact.value}</span>
-                    )}
-                  </div>
-                ))}
-              </div>
+          <div className="card-shadow relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-gradient-to-br from-white/5 via-white/10 to-transparent p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/50">
+              Quick facts
+            </p>
+            <div className="mt-4 grid grid-cols-1 gap-3 text-sm text-white/80">
+              {quickFacts.map((fact) => (
+                <div
+                  key={fact.label}
+                  className="flex items-center justify-between gap-4"
+                >
+                  <span className="text-white/60">{fact.label}</span>
+                  {fact.href ? (
+                    <Link
+                      href={fact.href}
+                      className="font-medium text-white transition hover:text-highlight"
+                    >
+                      {fact.value}
+                    </Link>
+                  ) : (
+                    <span className="font-medium">{fact.value}</span>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>

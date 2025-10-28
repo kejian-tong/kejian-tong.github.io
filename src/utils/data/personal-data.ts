@@ -7,7 +7,8 @@ export interface PersonalData {
   profileImage: string;
   email: string;
   location: string;
-  resumeUrl: string;
+  // Optional placeholder for future resume URL; keep empty when not in use.
+  resumeUrl?: string;
   devUsername: string;
   socialLinks: SocialLink[];
   highlights: string[];
@@ -22,8 +23,8 @@ export const personalData: PersonalData = {
   profileImage: "/profile.png",
   email: "tongcs2021@gmail.com",
   location: "Seattle, WA",
-  resumeUrl:
-    "https://drive.google.com/file/d/1jmwN3PGg5uebcsy_Fnvsg95fhE5YNaHv/view?usp=sharing",
+  // Add your resume URL here when you want to show it again (e.g., Google Drive or PDF link)
+  // resumeUrl: "",
   devUsername: "olivertong",
   socialLinks: [
     { label: "GitHub", href: "https://github.com/kejian-tong" },

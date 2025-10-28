@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { personalData } from "@/utils/data/personal-data";
 import { contactsData } from "@/utils/data/contacts-data";
@@ -118,15 +117,8 @@ export default function HeroSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="relative h-80 w-80 overflow-hidden rounded-[2.5rem] border border-white/10 bg-black/40 shadow-2xl shadow-blue-500/10">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-transparent to-purple-500/30" />
-            <Image
-              src={personalData.profileImage}
-              alt={personalData.name}
-              fill
-              priority
-              className="h-full w-full object-cover"
-            />
+          <div className="relative h-80 w-80 overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-blue-500/20 via-purple-500/10 to-slate-900/40 shadow-2xl shadow-blue-500/10">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-black/60 p-4 backdrop-blur">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
                 Highlights
