@@ -33,7 +33,7 @@ export const personalData: PersonalData = {
   highlights: [
     "Distributed systems & cloud architecture",
     "Backend engineering with Java, Spring, and Node.js",
-    "Full-stack delivery with React, Next.js, and modern UX",
+    "Full-stack delivery with React, Next.js, and TypeScript",
   ],
   technicalFocus: [
     "Java",

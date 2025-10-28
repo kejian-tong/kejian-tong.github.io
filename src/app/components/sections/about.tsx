@@ -19,7 +19,7 @@ const quickFacts = [
 export default function AboutSection() {
   return (
     <section id="about" className="relative mt-24 scroll-mt-24">
-  <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/60">
             About
