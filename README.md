@@ -1,5 +1,3 @@
-# Kejian Tong — Personal Website
-
 Live URL: <https://kejian-tong.github.io/>
 
 This is my personal site built with Next.js 14 (App Router), TypeScript, and Tailwind CSS. It’s exported as a fully static site and deployed automatically to GitHub Pages.
