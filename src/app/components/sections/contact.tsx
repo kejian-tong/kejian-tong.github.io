@@ -41,9 +41,11 @@ export default function ContactSection() {
     e.preventDefault();
     if (!emailEnabled) {
       toast.error("Email form isn't configured yet. Falling back to mailto.");
-      window.location.href = `mailto:${contactsData.email}?subject=${encodeURIComponent(
-        form.title
-      )}&body=${encodeURIComponent(form.message)}`;
+      window.location.href = `mailto:${
+        contactsData.email
+      }?subject=${encodeURIComponent(form.title)}&body=${encodeURIComponent(
+        form.message
+      )}`;
       return;
     }
     if (form.company) return; // honeypot: silently drop
@@ -57,11 +59,12 @@ export default function ContactSection() {
         SERVICE_ID as string,
         TEMPLATE_ID as string,
         {
-          from_name: form.name || "",
-          from_email: form.email,
-          subject: form.title,
+          // Align keys with your EmailJS template: {{name}}, {{email}}, {{title}}, {{message}}, {{time}}
+          name: form.name || "",
+          email: form.email,
+          title: form.title,
           message: form.message,
-          to_email: contactsData.email,
+          time: new Date().toString(),
         },
         { publicKey: PUBLIC_KEY }
       );
