@@ -1,1 +1,11 @@
 node_modules
+.next
+out
+.vercel
+.DS_Store
+.env*
+dist
+coverage
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
