@@ -1,130 +1,90 @@
-# Demo :movie_camera:
+# Kejian Tong — Personal Website
 
-![](./public/image/screen.png)
+Live URL: <https://kejian-tong.github.io/>
 
-## View live preview [here](https://kejian-tong.github.io/).
+This is my personal site built with Next.js 14 (App Router), TypeScript, and Tailwind CSS. It’s exported as a fully static site and deployed automatically to GitHub Pages.
 
----
+## Tech stack
 
-## Table of Contents :scroll:
+- Next.js 14 (App Router, static export)
+- TypeScript
+- Tailwind CSS
+- Framer Motion (subtle animations)
+- next-themes (dark/light theme)
 
-- [Sections](#sections-bookmark)
-- [Demo](#demo-movie_camera)
-- [Installation](#installation-arrow_down)
-- [Getting Started](#getting-started-dart)
-- [Usage](#usage-joystick)
-- [Packages Used](#packages-used-package)
+## Project structure
 
----
-
-# Sections :bookmark:
-
-- HERO SECTION
-- ABOUT ME
-- EXPERIENCE
-- SKILLS
-- PROJECTS
-- EDUCATION
-- BLOG
-- CONTACTS
-
----
-
-# Installation :arrow_down:
-
-### You will need to download Git and Node to run this project
-
-- [Git](https://git-scm.com/downloads)
-- [Node](https://nodejs.org/en/download/)
-
-#### Make sure you have the latest version of both Git and Node on your computer.
-
-```
-node --version
-git --version
+```text
+src/
+  app/
+    components/
+      layout/          # Navbar, Footer
+      sections/        # Hero, About, Projects, Skills, Education, Blog, Contact
+      ui/              # Small UI primitives (section heading, theme toggle)
+    css/globals.css    # Global styles (Tailwind)
+    layout.tsx         # App shell
+    page.tsx           # Home page composition
+    not-found.tsx      # 404 page
+    projects/
+      twinder/
+        page.tsx       # Case study
+      job-board/
+        page.tsx       # Case study
+  utils/
+    data/              # Typed content (personal, contacts, projects, education)
+    types/             # Shared interfaces
+public/
+  image/               # Static images served from /image/*
 ```
 
-## <br />
-
-# Getting Started :dart:
-
-### Fork and Clone the repo
-
-To Fork the repo click on the fork button at the top right of the page. Once the repo is forked open your terminal and perform the following commands
-
-```
-git clone https://github.com/<YOUR GITHUB USERNAME>/developer-portfolio.git
-
-cd developer-portfolio
-```
-
-### Install packages from the root directory
+## Local development
 
 ```bash
 npm install
-# or
-yarn install
+npm run dev
+# open http://localhost:3000
 ```
 
-Then, run the development server:
+## Build and static export
+
+This repo is configured for static export (GitHub Pages):
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm run build      # next build
+npx next export    # outputs static site into ./out
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment (GitHub Pages)
 
----
+- A GitHub Actions workflow lives at `.github/workflows/deploy.yml`.
+- On every push to `main`, it will build and export the site, then publish to GitHub Pages.
+- In the repo’s GitHub Settings → Pages, set “Build and deployment” → Source: GitHub Actions.
 
-# Usage :joystick:
+After the workflow completes, the site is live at: <https://kejian-tong.github.io/>
 
-Goto [emailjs.com](https://www.emailjs.com/) and create a new account for the mail sending. In free trial you will get 200 mail per month. After setup `emailjs` account, Please create a new `.env` file from `.env.example` file.
+## Customizing content
 
-Eg:
+Edit the data files under `src/utils/data/`:
 
-```env
-NEXT_PUBLIC_EMAILJS_SERVICE_ID =
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID =
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY =
-```
+- `personal-data.ts` — name, email, location, summary, social links, technical focus
+- `contacts-data.ts` — contact/social links
+- `projects-data.ts` — project cards (title, summary, tags, slug, image). The card links to `/projects/[slug]`.
+- `educations.ts` — education timeline
 
-### Then, Customize data in the `utils/data` [folder](https://github.com/said7388/developer-portfolio/tree/main/utils/data).
+Blog posts are fetched from DEV using your `devUsername` in `personal-data.ts`. If you don’t want the blog section, remove the `BlogSection` from `src/app/page.tsx`.
 
-Eg:
+## Notes
 
-```javascript
-export const personalData = {
-  name: "Kejian Tong",
-  profile: "/profile.png",
-  designation: "Software Engineer",
-  description: "My name is Kejian Tong....",
-  email: "tongcs2021@gmail.com",
-  address: "Seattle, WA",
-  github: "https://github.com/kejian-tong",
-  linkedIn: "https://www.linkedin.com/in/tongoliver/",
-  resume: "...",
-};
-```
+- Experience (employers/professional roles) has been removed by design. Only personal summary, projects, and education are shown.
+- Images are served unoptimized to support static export (`images.unoptimized = true`).
+- The contact section uses a `mailto:` link (no EmailJS or server code required).
 
-`devUsername` Used for fetching blog from `dev.to`.
+## Scripts
 
----
+- `npm run dev` — start dev server
+- `npm run build` — production build (static export compatible)
+- `npm run start` — serve built app (not needed for GitHub Pages)
 
----
+## License
 
-# Packages Used :package:
-
-| Used Package List  |
-| :----------------: |
-|        next        |
-|  @emailjs/browser  |
-|    lottie-react    |
-| react-fast-marquee |
-|    react-icons     |
-|   react-toastify   |
-|        sass        |
-|    tailwindcss     |
-
----
+MIT
