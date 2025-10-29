@@ -30,7 +30,7 @@ export default async function HomePage() {
       <ProjectsSection />
       <SkillsSection />
       <EducationSection />
-      <BlogSection posts={posts} />
+      {personalData.showBlog && <BlogSection posts={posts} />}
       <ContactSection />
     </div>
   );

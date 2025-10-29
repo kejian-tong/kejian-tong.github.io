@@ -14,8 +14,8 @@ const stats: Stat[] = [
   },
   {
     label: "Toolbox",
-    value: "Java · React · Cloud",
-    helper: "End-to-end delivery",
+    value: "Java · Go · Python · Cloud",
+    helper: "Docker · Kubernetes · Microservices",
   },
   {
     label: "Community",

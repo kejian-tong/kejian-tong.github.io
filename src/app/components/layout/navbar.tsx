@@ -12,7 +12,8 @@ const navItems = [
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Education", href: "#education" },
-  { label: "Writing", href: "#blog" },
+  // Writing hidden for now; placeholder kept in codebase.
+  // { label: "Writing", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -24,7 +25,7 @@ export default function Navbar() {
 
   // Observe sections to highlight the active nav item
   useEffect(() => {
-    const ids = ["about", "projects", "skills", "education", "blog", "contact"];
+  const ids = ["about", "projects", "skills", "education", "contact"]; // blog hidden
     const elements = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));

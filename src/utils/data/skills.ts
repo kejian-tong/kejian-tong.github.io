@@ -3,11 +3,20 @@ import type { SkillGroup } from "@/utils/types/content";
 export const skillGroups: SkillGroup[] = [
   {
     title: "Languages",
-    skills: ["Python", "Java", "JavaScript", "TypeScript", "Go", "C++", "C"],
+    skills: ["Java", "Go", "Python", "TypeScript", "JavaScript", "C++", "C"],
   },
   {
     title: "Frameworks & Libraries",
-    skills: ["React", "Next.js", "Spring", "Node.js", "Express", "Django"],
+    skills: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "NestJS",
+      "Django",
+      "FastAPI",
+      "Gin (Go)",
+    ],
   },
   {
     title: "Cloud & Data",
@@ -23,6 +32,6 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Platform Tooling",
-    skills: ["Docker", "Git", "Jenkins", "Cloudinary"],
+    skills: ["Docker", "Kubernetes", "Git", "Jenkins", "Microservices", "Cloudinary"],
   },
 ];

@@ -10,6 +10,8 @@ export interface PersonalData {
   // Optional placeholder for future resume URL; keep empty when not in use.
   resumeUrl?: string;
   devUsername: string;
+  // Feature flag to control rendering of the Writing/Blog section without deleting code
+  showBlog?: boolean;
   socialLinks: SocialLink[];
   highlights: string[];
   technicalFocus?: string[];
@@ -26,14 +28,15 @@ export const personalData: PersonalData = {
   // Add your resume URL here when you want to show it again (e.g., Google Drive or PDF link)
   // resumeUrl: "",
   devUsername: "olivertong",
+  showBlog: false,
   socialLinks: [
     { label: "GitHub", href: "https://github.com/kejian-tong" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/tongoliver/" },
   ],
   highlights: [
     "Distributed systems & cloud architecture",
-    "Backend engineering with Java, Spring, and Node.js",
-    "Full-stack delivery with React, Next.js, and TypeScript",
+    "Backend engineering with Java, Go, Python, and Node.js",
+    "Full‑stack delivery with React, Next.js, and TypeScript",
   ],
   technicalFocus: [
     "Java",
