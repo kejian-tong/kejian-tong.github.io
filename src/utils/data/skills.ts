@@ -10,6 +10,16 @@ export const skillGroups: SkillGroup[] = [
     skills: ["Node.js", "Express", "NestJS", "Django", "REST", "gRPC"],
   },
   {
+    title: "Architecture",
+    skills: [
+      "Domain-driven design",
+      "Event-driven",
+      "CQRS",
+      "SAGA",
+      "Observability",
+    ],
+  },
+  {
     title: "Frontend & UI",
     skills: ["React", "Next.js", "Tailwind CSS"],
   },
@@ -27,6 +37,6 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Platform & DevOps",
-    skills: ["Docker", "Kubernetes", "CI/CD", "Jenkins", "Git", "Microservices", "Observability"],
+    skills: ["Docker", "Kubernetes", "CI/CD", "Jenkins", "Git", "Microservices"],
   },
 ];
