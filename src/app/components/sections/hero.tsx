@@ -14,7 +14,7 @@ const stats: Stat[] = [
   },
   {
     label: "Toolbox",
-    value: "Java · Go · Python · Cloud",
+    value: "Java · TypeScript · Python · Cloud",
     helper: "Docker · Kubernetes · Microservices",
   },
   {

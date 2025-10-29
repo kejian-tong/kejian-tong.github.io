@@ -14,8 +14,6 @@ export const skillGroups: SkillGroup[] = [
       "Express",
       "NestJS",
       "Django",
-      "FastAPI",
-      "Gin (Go)",
     ],
   },
   {
@@ -32,6 +30,13 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Platform Tooling",
-    skills: ["Docker", "Kubernetes", "Git", "Jenkins", "Microservices", "Cloudinary"],
+    skills: [
+      "Docker",
+      "Kubernetes",
+      "Git",
+      "Jenkins",
+      "Microservices",
+      "Cloudinary",
+    ],
   },
 ];

@@ -25,7 +25,7 @@ export default function Navbar() {
 
   // Observe sections to highlight the active nav item
   useEffect(() => {
-  const ids = ["about", "projects", "skills", "education", "contact"]; // blog hidden
+    const ids = ["about", "projects", "skills", "education", "contact"]; // blog hidden
     const elements = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));

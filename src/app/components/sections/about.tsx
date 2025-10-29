@@ -2,24 +2,12 @@ import Link from "next/link";
 import { personalData } from "@/utils/data/personal-data";
 import { contactsData } from "@/utils/data/contacts-data";
 
-const quickFacts = [
-  { label: "Location", value: personalData.location },
-  {
-    label: "Email",
-    value: personalData.email,
-    href: `mailto:${personalData.email}`,
-  },
-  {
-    label: "Writing",
-    value: `DEV · @${contactsData.devUsername}`,
-    href: `https://dev.to/${contactsData.devUsername}`,
-  },
-];
+// Quick Facts card removed per request to simplify About section.
 
 export default function AboutSection() {
   return (
     <section id="about" className="relative mt-24 scroll-mt-24">
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="mx-auto max-w-5xl">
         <div className="space-y-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/60">
             About
@@ -69,33 +57,6 @@ export default function AboutSection() {
               </ul>
             </div>
           ) : null}
-        </div>
-        <div className="relative">
-          <div className="card-shadow relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-gradient-to-br from-white/5 via-white/10 to-transparent p-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/50">
-              Quick facts
-            </p>
-            <div className="mt-4 grid grid-cols-1 gap-3 text-sm text-white/80">
-              {quickFacts.map((fact) => (
-                <div
-                  key={fact.label}
-                  className="flex items-center justify-between gap-4"
-                >
-                  <span className="text-white/60">{fact.label}</span>
-                  {fact.href ? (
-                    <Link
-                      href={fact.href}
-                      className="font-medium text-white transition hover:text-highlight"
-                    >
-                      {fact.value}
-                    </Link>
-                  ) : (
-                    <span className="font-medium">{fact.value}</span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
