@@ -11,8 +11,8 @@ export default function Page() {
     <article className="prose prose-invert max-w-none">
       <h1>Discord Food Delivery Bot</h1>
       <p>
-        A conversational assistant built on Discord to browse restaurants and
-        place food orders.
+        Conversational assistant on Discord for browsing restaurants and
+        placing orders.
         <br />
         <a
           href="https://github.com/kejian-tong/FoodDeliveryDiscordBot"
@@ -30,16 +30,16 @@ export default function Page() {
       <h2>Highlights</h2>
       <ul>
         <li>
-          Created an innovative Discord bot for food ordering and restaurant
-          information using Java/JDA and MongoDB Atlas
+          <strong>Platform:</strong> Java + JDA powers intents, commands, and
+          interactive flows; MongoDB Atlas persists restaurant and order data.
         </li>
         <li>
-          Employed dependency injection & MVC design patterns, applying OOP
-          concepts for a modular and maintainable architecture
+          <strong>Architecture:</strong> Dependency injection and MVC patterns
+          yield modular handlers and testable services.
         </li>
         <li>
-          Built and deployed the app using Gradle on Fly.io, ensuring a seamless
-          user experience
+          <strong>Delivery:</strong> Built with Gradle and deployed on Fly.io
+          for low‑touch operations and quick rollbacks.
         </li>
       </ul>
 

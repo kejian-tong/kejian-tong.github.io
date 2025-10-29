@@ -11,8 +11,8 @@ export default function Page() {
     <article className="prose prose-invert max-w-none">
       <h1>Campsite Review Explorer</h1>
       <p>
-        Community‑powered campsite reviews with rich media uploads and a clean
-        browsing experience.
+        Community‑powered campsite reviews with rich media uploads and an
+        intuitive browsing experience.
         <br />
         <a
           href="https://github.com/kejian-tong/CampSite"
@@ -30,17 +30,16 @@ export default function Page() {
       <h2>Highlights</h2>
       <ul>
         <li>
-          Developed a full‑stack JavaScript application, enabling users to
-          browse reviews and post comments through an interactive website
+          <strong>Experience:</strong> Users browse campsites, post reviews,
+          and discuss via comments in a responsive UI.
         </li>
         <li>
-          Created RESTful APIs with comprehensive CRUD functionality, leveraging
-          MongoDB Atlas for data storage and Cloudinary for image management
+          <strong>APIs:</strong> RESTful endpoints enable full CRUD; MongoDB
+          Atlas stores content; Cloudinary handles images.
         </li>
         <li>
-          Employed HTML for website structure, enhanced aesthetics with
-          Bootstrap and CSS, utilized NPM alongside Node.js for UI development,
-          and deployed the application on Heroku
+          <strong>Delivery:</strong> Bootstrap + CSS for styling; Node.js
+          toolchain with NPM; deployed on Heroku.
         </li>
       </ul>
 

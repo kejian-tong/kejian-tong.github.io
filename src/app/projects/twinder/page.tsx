@@ -11,7 +11,8 @@ export default function Page() {
     <article className="prose prose-invert max-w-none">
       <h1>Twinder Microservice</h1>
       <p>
-        Designing for spikes and consistency across a social matching workload.
+        Event‑driven backend designed for traffic spikes and consistent latency
+        across a social matching workload.
         <br />
         <a
           href="https://github.com/kejian-tong/DistributedSystemDatingApp"
@@ -29,30 +30,24 @@ export default function Page() {
       <h2>Highlights</h2>
       <ul>
         <li>
-          Developed a distributed cloud-based dating service in Java to process
-          an average of 500 million daily requests, with a Redis cache layer for
-          fast request processing and AWS EC2 as cloud hosting for high
-          performance
+          <strong>Scale:</strong> Java microservices processed ~
+          <strong>500M daily requests</strong> with a Redis caching layer and
+          AWS EC2 autoscaling for sustained performance.
         </li>
         <li>
-          Optimized data distribution and processing by implementing a Kafka
-          cluster with batch compression and Kafka partitions to distribute
-          application data to multiple consumers for separate processing tasks,
-          reducing dispatching time from 200 ms to 100 ms
+          <strong>Streaming:</strong> Kafka cluster with batch compression and
+          partitioning fanned out workloads to multiple consumers, cutting
+          dispatch time from <strong>200ms → 100ms</strong>.
         </li>
         <li>
-          Implemented the CQRS (Command and Query Responsibility Segregation)
-          data storage pattern, optimizing read/write operations for speed.
-          Utilized a MongoDB shard cluster for efficient data distribution,
-          achieving a 99.98% uptime and ensuring seamless scaling during
-          high-traffic periods
+          <strong>CQRS + Sharding:</strong> CQRS storage design accelerated
+          reads/writes; a sharded MongoDB cluster delivered
+          <strong> 99.98% uptime</strong> with seamless scale under peak load.
         </li>
         <li>
-          Conducted stress tests with 2 million requests using self-built
-          multi-threaded clients and JMeter, to compare product performance
-          before/after applying the above scaling strategies, showing results in
-          a throughput uplift from 2000 to 6600 requests/s and a latency
-          decrease from 200 to 30 ms
+          <strong>Perf testing:</strong> Multi‑threaded clients and JMeter drove
+          <strong>2M</strong> requests to benchmark improvements: throughput
+          <strong>2k → 6.6k req/s</strong>, latency <strong>200ms → 30ms</strong>.
         </li>
       </ul>
 
@@ -61,7 +56,7 @@ export default function Page() {
         The system ingests swipe events at high volume, emitting them to Kafka
         topics. A set of workers transforms events, updating projections and
         pushing match candidates into Redis. RabbitMQ is used for targeted
-        fan-out to user-specific queues for real-time updates.
+        fan‑out to user‑specific queues for real‑time updates.
       </p>
 
       <h2>Notes</h2>
