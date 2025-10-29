@@ -49,8 +49,8 @@ export default function ContactSection() {
       return;
     }
     if (form.company) return; // honeypot: silently drop
-    if (!form.email || !form.title || !form.message) {
-      toast.error("Please fill in your email, title, and message.");
+    if (!form.name || !form.email || !form.title || !form.message) {
+      toast.error("Please fill in your name, email, title, and message.");
       return;
     }
     setSubmitting(true);
@@ -122,11 +122,12 @@ export default function ContactSection() {
             </div>
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wide text-white/50">
-                Name (optional)
+                Name
               </label>
               <input
                 type="text"
                 name="name"
+                required
                 value={form.name}
                 onChange={handleChange}
                 className="mt-1 w-full rounded-xl border border-white/10 bg-black/40 px-3 py-2 text-sm text-white placeholder-white/40 outline-none focus:border-white/25"
