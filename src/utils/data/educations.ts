@@ -6,7 +6,7 @@ export const educations: EducationItem[] = [
     title: "Master of Science in Computer Science",
     organization: "Northeastern University",
     period: "2021 – 2023",
-    location: "Boston, MA",
+    location: "Seattle, WA",
     credential: "Focus on distributed systems and cloud computing",
   },
 ];
