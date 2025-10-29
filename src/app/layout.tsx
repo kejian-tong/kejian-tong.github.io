@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://kejian-tong.github.io",
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+  },
   openGraph: {
     type: "website",
     url: "https://kejian-tong.github.io",
@@ -51,7 +54,11 @@ export const metadata: Metadata = {
     images: ["/card.png"],
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/school-logo.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/school-logo.svg" }],
     shortcut: "/favicon.svg",
   },
 };
@@ -99,7 +106,25 @@ export default function RootLayout({
                 "@type": "Organization",
                 name: "Northeastern University",
                 url: "https://www.northeastern.edu/",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://kejian-tong.github.io/school-logo.svg",
+                },
               },
+            }),
+          }}
+        />
+        <Script
+          id="ld-json-organization"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Kejian Tong",
+              url: "https://kejian-tong.github.io",
+              logo: "https://kejian-tong.github.io/school-logo.svg",
             }),
           }}
         />
