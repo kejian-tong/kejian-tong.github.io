@@ -30,8 +30,8 @@ export default function Page() {
           hashing; middleware guards protected routes.
         </li>
         <li>
-          <strong>UI:</strong> Responsive React/Next.js front end with
-          Bootstrap components and accessible patterns.
+          <strong>UI:</strong> Responsive React/Next.js front end with Bootstrap
+          components and accessible patterns.
         </li>
         <li>
           <strong>Infra:</strong> Deployed on Heroku; MongoDB Atlas for data;

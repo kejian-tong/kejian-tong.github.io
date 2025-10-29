@@ -47,7 +47,8 @@ export default function Page() {
         <li>
           <strong>Perf testing:</strong> Multi‑threaded clients and JMeter drove
           <strong>2M</strong> requests to benchmark improvements: throughput
-          <strong>2k → 6.6k req/s</strong>, latency <strong>200ms → 30ms</strong>.
+          <strong>2k → 6.6k req/s</strong>, latency{" "}
+          <strong>200ms → 30ms</strong>.
         </li>
       </ul>
 

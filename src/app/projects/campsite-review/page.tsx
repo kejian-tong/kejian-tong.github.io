@@ -30,8 +30,8 @@ export default function Page() {
       <h2>Highlights</h2>
       <ul>
         <li>
-          <strong>Experience:</strong> Users browse campsites, post reviews,
-          and discuss via comments in a responsive UI.
+          <strong>Experience:</strong> Users browse campsites, post reviews, and
+          discuss via comments in a responsive UI.
         </li>
         <li>
           <strong>APIs:</strong> RESTful endpoints enable full CRUD; MongoDB

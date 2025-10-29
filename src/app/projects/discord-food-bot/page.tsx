@@ -11,8 +11,8 @@ export default function Page() {
     <article className="prose prose-invert max-w-none">
       <h1>Discord Food Delivery Bot</h1>
       <p>
-        Conversational assistant on Discord for browsing restaurants and
-        placing orders.
+        Conversational assistant on Discord for browsing restaurants and placing
+        orders.
         <br />
         <a
           href="https://github.com/kejian-tong/FoodDeliveryDiscordBot"
