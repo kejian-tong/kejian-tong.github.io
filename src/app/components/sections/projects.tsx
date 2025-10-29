@@ -11,7 +11,8 @@ export default function ProjectsSection() {
         title="Selected work"
         description="End-to-end systems and products I’ve designed, built, and shipped."
       />
-      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Use a clean 2x2 layout on larger screens */}
+      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
         {projectsData.map((project) => (
           <article
             key={project.id}
@@ -29,7 +30,18 @@ export default function ProjectsSection() {
             <div className="space-y-3 p-5">
               <div className="flex items-center justify-between gap-2">
                 <h3 className="text-lg font-semibold text-white">
-                  {project.title}
+                  {project.github ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition hover:text-slate-200 underline-offset-4 hover:underline"
+                    >
+                      {project.title}
+                    </a>
+                  ) : (
+                    project.title
+                  )}
                 </h3>
                 <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-white/70">
                   {project.role}

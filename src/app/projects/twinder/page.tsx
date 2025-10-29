@@ -12,6 +12,14 @@ export default function Page() {
       <h1>Twinder Microservice</h1>
       <p>
         Designing for spikes and consistency across a social matching workload.
+        <br />
+        <a
+          href="https://github.com/kejian-tong/DistributedSystemDatingApp"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View source on GitHub ↗
+        </a>
       </p>
       <img src="/image/crefin.jpg" alt="Twinder cover" />
 
@@ -21,20 +29,30 @@ export default function Page() {
       <h2>Highlights</h2>
       <ul>
         <li>
-          CQRS-aligned design separated write-heavy swipe ingestion from
-          read-optimized match queries
+          Developed a distributed cloud-based dating service in Java to process
+          an average of 500 million daily requests, with a Redis cache layer for
+          fast request processing and AWS EC2 as cloud hosting for high
+          performance
         </li>
         <li>
-          Kafka for event streaming, RabbitMQ for targeted fanout, Redis for hot
-          paths
+          Optimized data distribution and processing by implementing a Kafka
+          cluster with batch compression and Kafka partitions to distribute
+          application data to multiple consumers for separate processing tasks,
+          reducing dispatching time from 200 ms to 100 ms
         </li>
         <li>
-          MongoDB with strategic compound indexes to balance write throughput
-          and query performance
+          Implemented the CQRS (Command and Query Responsibility Segregation)
+          data storage pattern, optimizing read/write operations for speed.
+          Utilized a MongoDB shard cluster for efficient data distribution,
+          achieving a 99.98% uptime and ensuring seamless scaling during
+          high-traffic periods
         </li>
         <li>
-          Horizontal scaling on AWS EC2 with autoscaling policies and health
-          probes
+          Conducted stress tests with 2 million requests using self-built
+          multi-threaded clients and JMeter, to compare product performance
+          before/after applying the above scaling strategies, showing results in
+          a throughput uplift from 2000 to 6600 requests/s and a latency
+          decrease from 200 to 30 ms
         </li>
       </ul>
 
