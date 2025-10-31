@@ -41,8 +41,13 @@ export default function Page() {
 
       <h2>Notes</h2>
       <p>Source is private; case study summarizes key design decisions.</p>
-      <p>
-        <a href="/#projects">← Back to projects</a>
+      <p className="mt-8">
+        <a
+          href="/#projects"
+          className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300"
+        >
+          ← Back to projects
+        </a>
       </p>
     </article>
   );

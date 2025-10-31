@@ -2,29 +2,37 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
 import clsx from "clsx";
 import { personalData } from "@/utils/data/personal-data";
 import { ThemeToggle } from "@/app/components/ui/theme-toggle";
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Education", href: "#education" },
+  { label: "About", href: "/#about" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Education", href: "/#education" },
   // Writing hidden for now; placeholder kept in codebase.
-  // { label: "Writing", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  // { label: "Writing", href: "/#blog" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   const toggleMenu = () => setOpen((prev) => !prev);
 
-  // Observe sections to highlight the active nav item
+  // Observe sections to highlight the active nav item (only on homepage)
   useEffect(() => {
+    if (!isHomePage) {
+      setActive("");
+      return;
+    }
+
     const ids = ["about", "projects", "skills", "education", "contact"]; // blog hidden
     const elements = ids
       .map((id) => document.getElementById(id))
@@ -46,10 +54,10 @@ export default function Navbar() {
 
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [isHomePage]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 bg-black/80 backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
         <Link
           href="/"
@@ -66,7 +74,7 @@ export default function Navbar() {
                 href={item.href}
                 className={clsx(
                   "transition hover:text-white",
-                  active && item.href === `#${active}` && "text-white"
+                  active && item.href === `/#${active}` && "text-white"
                 )}
                 onClick={() => setOpen(false)}
               >
@@ -105,7 +113,7 @@ export default function Navbar() {
                 className={clsx(
                   "rounded-xl px-3 py-2 transition hover:bg-white/10 hover:text-white",
                   active &&
-                    item.href === `#${active}` &&
+                    item.href === `/#${active}` &&
                     "bg-white/10 text-white"
                 )}
                 onClick={() => setOpen(false)}
