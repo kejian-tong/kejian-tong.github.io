@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { personalData } from "@/utils/data/personal-data";
 import { contactsData } from "@/utils/data/contacts-data";
+import { AnimatedBackground } from "@/app/components/ui/animated-background";
 import { Stat } from "@/utils/types/content";
 
 const stats: Stat[] = [
@@ -36,9 +37,8 @@ const heroVariants = {
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent px-6 py-16 shadow-2xl shadow-blue-500/10 backdrop-blur-md sm:px-10">
-      <div className="absolute inset-0 -z-10 blur-3xl">
-        <div className="hero-blob" />
-      </div>
+      {/* Animated background with floating gradients */}
+      <AnimatedBackground />
 
       <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
         <motion.div
