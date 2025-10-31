@@ -10,13 +10,18 @@ import { FadeInView } from "@/app/components/ui/fade-in-view";
 export default function ProjectsSection() {
   return (
     <section id="projects" className="scroll-mt-24">
-      <FadeInView>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <SectionHeading
           eyebrow="Projects"
           title="Selected work"
           description="End-to-end systems and products I've designed, built, and shipped."
         />
-      </FadeInView>
+      </motion.div>
       {/* Use a clean 2x2 layout on larger screens */}
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
         {projectsData.map((project, index) => (
@@ -26,7 +31,8 @@ export default function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/30"
+            whileHover={{ scale: 1.03, y: -2 }}
+            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/30 transition-shadow hover:shadow-xl hover:shadow-blue-500/20"
           >
             <div className="relative h-44 w-full">
               <Image
