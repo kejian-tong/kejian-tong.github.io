@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { personalData } from "@/utils/data/personal-data";
 import { contactsData } from "@/utils/data/contacts-data";
+import { FadeInView } from "@/app/components/ui/fade-in-view";
 
 // Quick Facts card removed per request to simplify About section.
 
@@ -8,7 +11,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="relative mt-24 scroll-mt-24">
       <div className="mx-auto max-w-5xl">
-        <div className="space-y-6">
+        <FadeInView className="space-y-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/60">
             About
           </p>
@@ -57,7 +60,7 @@ export default function AboutSection() {
               </ul>
             </div>
           ) : null}
-        </div>
+        </FadeInView>
       </div>
     </section>
   );

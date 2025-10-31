@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { SectionHeading } from "@/app/components/ui/section-heading";
+import { FadeInView } from "@/app/components/ui/fade-in-view";
 
 export type BlogPost = {
   id: number;
@@ -14,20 +18,32 @@ export type BlogPost = {
 export default function BlogSection({ posts }: { posts: BlogPost[] }) {
   return (
     <section id="blog" className="scroll-mt-24">
-      <SectionHeading
-        eyebrow="Writing"
-        title="Latest posts"
-        description="Occasional notes on building reliable systems and polished products."
-      />
+      <FadeInView>
+        <SectionHeading
+          eyebrow="Writing"
+          title="Latest posts"
+          description="Occasional notes on building reliable systems and polished products."
+        />
+      </FadeInView>
       {!posts || posts.length === 0 ? (
-        <p className="mt-6 text-sm text-white/60">
-          No recent posts found. Follow me on DEV to catch updates.
-        </p>
+        <FadeInView>
+          <p className="mt-6 text-sm text-white/60">
+            No recent posts found. Follow me on DEV to catch updates.
+          </p>
+        </FadeInView>
       ) : (
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <article
+          {posts.map((post, index) => (
+            <motion.article
               key={post.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
               className="group overflow-hidden rounded-3xl border border-white/10 bg-black/30"
             >
               <div className="relative h-40 w-full">
@@ -67,7 +83,7 @@ export default function BlogSection({ posts }: { posts: BlogPost[] }) {
                   </Link>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       )}

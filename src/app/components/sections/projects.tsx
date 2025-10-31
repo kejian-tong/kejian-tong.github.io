@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { projectsData } from "@/utils/data/projects-data";
 import { SectionHeading } from "@/app/components/ui/section-heading";
+import { FadeInView } from "@/app/components/ui/fade-in-view";
 
 export default function ProjectsSection() {
   return (

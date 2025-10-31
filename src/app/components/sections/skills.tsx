@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { skillGroups } from "@/utils/data/skills";
 import { SectionHeading } from "@/app/components/ui/section-heading";
+import { FadeInView } from "@/app/components/ui/fade-in-view";
 import type { SkillGroup } from "@/utils/types/content";
 
 export default function SkillsSection() {
