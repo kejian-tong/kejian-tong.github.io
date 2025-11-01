@@ -55,11 +55,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/school-logo.svg", type: "image/svg+xml" },
       { url: "/favicon.svg", type: "image/svg+xml" },
     ],
     apple: [{ url: "/school-logo.svg" }],
-    shortcut: "/favicon.svg",
+    shortcut: "/favicon.ico",
   },
 };
 
