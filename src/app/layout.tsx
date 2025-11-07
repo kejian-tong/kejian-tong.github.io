@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     canonical: "https://kejian-tong.github.io",
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    google: "VfiWPwx4cxZkahHz0S5d5gUgZicnDGzLQChKc_t38Kg",
   },
   openGraph: {
     type: "website",
