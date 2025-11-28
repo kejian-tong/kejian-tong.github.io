@@ -40,18 +40,32 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submitting) return; // ignore rapid double-submits
+    const trimmed = {
+      name: form.name.trim(),
+      email: form.email.trim(),
+      title: form.title.trim(),
+      message: form.message.trim(),
+      company: form.company.trim(),
+    };
+    const emailValid = /\S+@\S+\.\S+/.test(trimmed.email);
+
     if (!emailEnabled) {
       toast.error("Email form isn't configured yet. Falling back to mailto.");
       window.location.href = `mailto:${
         contactsData.email
-      }?subject=${encodeURIComponent(form.title)}&body=${encodeURIComponent(
-        form.message
+      }?subject=${encodeURIComponent(trimmed.title)}&body=${encodeURIComponent(
+        trimmed.message
       )}`;
       return;
     }
-    if (form.company) return; // honeypot: silently drop
-    if (!form.name || !form.email || !form.title || !form.message) {
+    if (trimmed.company) return; // honeypot: silently drop
+    if (!trimmed.name || !trimmed.email || !trimmed.title || !trimmed.message) {
       toast.error("Please fill in your name, email, title, and message.");
+      return;
+    }
+    if (!emailValid) {
+      toast.error("Please enter a valid email address.");
       return;
     }
     setSubmitting(true);
@@ -61,10 +75,10 @@ export default function ContactSection() {
         TEMPLATE_ID as string,
         {
           // Align keys with your EmailJS template: {{name}}, {{email}}, {{title}}, {{message}}, {{time}}
-          name: form.name || "",
-          email: form.email,
-          title: form.title,
-          message: form.message,
+          name: trimmed.name || "",
+          email: trimmed.email,
+          title: trimmed.title,
+          message: trimmed.message,
           time: new Date().toString(),
         },
         { publicKey: PUBLIC_KEY }
