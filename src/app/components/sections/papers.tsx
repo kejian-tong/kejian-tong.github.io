@@ -6,6 +6,7 @@ import Link from "next/link";
 import { papers } from "@/utils/data/papers-data";
 import { SectionHeading } from "@/app/components/ui/section-heading";
 import { FadeInView } from "@/app/components/ui/fade-in-view";
+import { motion } from "framer-motion";
 
 const Papers = () => {
   return (
@@ -21,7 +22,18 @@ const Papers = () => {
       <div className="mt-8 grid gap-6">
         {papers.map((paper, index) => (
           <FadeInView key={index} delay={index * 0.06}>
-            <article className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/30 transition-shadow hover:shadow-xl">
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.06,
+                ease: "easeOut",
+              }}
+              whileHover={{ scale: 1.03, y: -4 }}
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/30 transition-shadow hover:shadow-xl hover:shadow-blue-500/20"
+            >
               <div className="space-y-3 p-6">
                 <div>
                   <h3 className="text-lg font-semibold text-white">
@@ -41,7 +53,7 @@ const Papers = () => {
                   {paper.publication}, {paper.year}
                 </p>
               </div>
-            </article>
+            </motion.article>
           </FadeInView>
         ))}
       </div>
