@@ -19,9 +19,9 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kejian-tong.github.io"),
-  title: "Kejian Tong · Software Engineer",
+  title: "Kejian Tong | Software Engineer | AI Researcher",
   description:
-    "Portfolio of Kejian Tong, a Seattle-based software engineer building distributed systems and polished web experiences.",
+    "Official personal website of Kejian Tong — Software Engineer, AI Researcher specializing in backend architecture, distributed systems, machine learning and NLP.",
   alternates: {
     canonical: "https://kejian-tong.github.io",
   },
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://kejian-tong.github.io",
     siteName: "Kejian Tong",
-    title: "Kejian Tong · Software Engineer",
+    title: "Kejian Tong | Software Engineer | AI Researcher",
     description:
-      "Portfolio of Kejian Tong, an entry-level software engineer building distributed systems and polished web experiences.",
+      "Official personal website of Kejian Tong — Software Engineer, AI Researcher specializing in backend architecture, distributed systems, machine learning and NLP.",
     images: [
       {
         url: "/card.png",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@",
     creator: "@",
-    title: "Kejian Tong · Software Engineer",
+    title: "Kejian Tong | Software Engineer | AI Researcher",
     description:
-      "Portfolio of Kejian Tong, an entry-level software engineer building distributed systems and polished web experiences.",
+      "Official personal website of Kejian Tong — Software Engineer, AI Researcher specializing in backend architecture, distributed systems, machine learning and NLP.",
     images: ["/card.png"],
   },
   icons: {
@@ -97,10 +97,17 @@ export default function RootLayout({
               "@type": "Person",
               name: "Kejian Tong",
               url: "https://kejian-tong.github.io",
+              jobTitle: "Software Engineer",
               sameAs: [
-                // Add or remove as appropriate for you
                 "https://github.com/kejian-tong",
-                "https://www.linkedin.com/in/kejian-tong/",
+                "https://scholar.google.com/citations?user=JUGvC_oAAAAJ&hl=en",
+                "https://www.researchgate.net/profile/Kejian-Tong",
+                "https://www.linkedin.com/in/tongoliver/",
+                "https://orcid.org/0009-0002-5127-2711",
+                "https://ieeexplore.ieee.org/author/658338598189173",
+                "https://www.semanticscholar.org/author/Kejian-Tong/2368457510",
+                "https://arxiv.org/a/tong_k_1.html",
+                "https://www.techrxiv.org/users/934258"
               ],
               affiliation: {
                 "@type": "Organization",
