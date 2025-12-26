@@ -22,3 +22,12 @@ export interface Stat {
   value: string;
   helper?: string;
 }
+
+export interface Paper {
+  title: string;
+  authors: string;
+  publication: string;
+  year: number;
+  citedBy?: number;
+  href: string;
+}

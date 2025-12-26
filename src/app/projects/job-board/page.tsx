@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Job Board Platform Case Study",
@@ -14,7 +15,13 @@ export default function Page() {
         Full‑stack job posting platform with secure authentication and a clean,
         responsive UI for fast browsing and CRUD operations.
       </p>
-      <img src="/image/travel.jpg" alt="Job board" />
+      <Image
+        src="/image/travel.jpg"
+        alt="Job board"
+        width={1200}
+        height={700}
+        className="rounded-md"
+      />
 
       <h2>Role</h2>
       <p>Full Stack Developer</p>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Campsite Review Explorer Case Study",
@@ -22,7 +23,13 @@ export default function Page() {
           View source on GitHub ↗
         </a>
       </p>
-      <img src="/image/ayla.jpg" alt="Campsite review" />
+      <Image
+        src="/image/ayla.jpg"
+        alt="Campsite review"
+        width={1200}
+        height={700}
+        className="rounded-md"
+      />
 
       <h2>Role</h2>
       <p>Full Stack Developer</p>

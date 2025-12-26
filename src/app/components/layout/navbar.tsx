@@ -11,6 +11,7 @@ import { ThemeToggle } from "@/app/components/ui/theme-toggle";
 const navItems = [
   { label: "About", href: "/#about" },
   { label: "Projects", href: "/#projects" },
+  { label: "Papers", href: "/#papers" },
   { label: "Skills", href: "/#skills" },
   { label: "Education", href: "/#education" },
   // Writing hidden for now; placeholder kept in codebase.
@@ -33,7 +34,14 @@ export default function Navbar() {
       return;
     }
 
-    const ids = ["about", "projects", "skills", "education", "contact"]; // blog hidden
+    const ids = [
+      "about",
+      "projects",
+      "papers",
+      "skills",
+      "education",
+      "contact",
+    ]; // blog hidden
     const elements = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
