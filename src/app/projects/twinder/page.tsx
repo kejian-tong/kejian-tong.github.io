@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
+const SITE_URL = "https://kejian-tong.github.io";
+
 export const metadata: Metadata = {
   title: "Twinder Microservice Case Study",
   description:
     "A scalable, event-driven service for high-volume swipe and match workloads",
+  alternates: {
+    canonical: `${SITE_URL}/projects/twinder`,
+  },
+  openGraph: {
+    url: `${SITE_URL}/projects/twinder`,
+  },
 };
 
 export default function Page() {
