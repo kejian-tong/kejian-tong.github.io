@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Inter, Sora } from "next/font/google";
 import { Providers } from "@/app/providers";
 import Navbar from "@/app/components/layout/navbar";
@@ -11,30 +10,36 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
 });
+
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sora",
   display: "swap",
 });
 
+const SITE_URL = "https://kejian-tong.github.io";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kejian-tong.github.io"),
-  title: "Kejian Tong | Software Engineer | AI Researcher",
-  description:
-    "Official personal website of Kejian Tong — Software Engineer, AI Researcher specializing in backend architecture, distributed systems, machine learning and NLP.",
-  alternates: {
-    canonical: "https://kejian-tong.github.io",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Kejian Tong | Software Engineer | AI Researcher",
+    template: "%s | Kejian Tong",
   },
+  description:
+    "Official personal website of Kejian Tong — Software Engineer and AI Researcher specializing in backend architecture, distributed systems, machine learning, and NLP.",
+
+  // Google Search Console verification (meta name="google-site-verification")
   verification: {
     google: "VfiWPwx4cxZkahHz0S5d5gUgZicnDGzLQChKc_t38Kg",
   },
+
   openGraph: {
     type: "website",
-    url: "https://kejian-tong.github.io",
+    url: SITE_URL,
     siteName: "Kejian Tong",
     title: "Kejian Tong | Software Engineer | AI Researcher",
     description:
-      "Official personal website of Kejian Tong — Software Engineer, AI Researcher specializing in backend architecture, distributed systems, machine learning and NLP.",
+      "Official personal website of Kejian Tong — Software Engineer and AI Researcher specializing in backend architecture, distributed systems, machine learning, and NLP.",
     images: [
       {
         url: "/card.png",
@@ -44,15 +49,15 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    site: "@",
-    creator: "@",
     title: "Kejian Tong | Software Engineer | AI Researcher",
     description:
-      "Official personal website of Kejian Tong — Software Engineer, AI Researcher specializing in backend architecture, distributed systems, machine learning and NLP.",
+      "Official personal website of Kejian Tong — Software Engineer and AI Researcher specializing in backend architecture, distributed systems, machine learning, and NLP.",
     images: ["/card.png"],
   },
+
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -68,73 +73,88 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // ✅ JSON-LD structured data
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}#website`,
+    name: "Kejian Tong",
+    url: SITE_URL,
+  };
+
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE_URL}#person`,
+    name: "Kejian Tong",
+    url: SITE_URL,
+    description:
+      "Software Engineer and AI Researcher specializing in backend architecture, distributed systems, machine learning, and NLP.",
+    jobTitle: "Software Engineer",
+    image: `${SITE_URL}/card.png`,
+    sameAs: [
+      "https://github.com/kejian-tong",
+      "https://scholar.google.com/citations?user=JUGvC_oAAAAJ&hl=en",
+      "https://www.researchgate.net/profile/Kejian-Tong",
+      "https://www.linkedin.com/in/tongoliver/",
+      "https://orcid.org/0009-0002-5127-2711",
+      "https://ieeexplore.ieee.org/author/658338598189173",
+      "https://www.semanticscholar.org/author/Kejian-Tong/2368457510",
+      "https://arxiv.org/a/tong_k_1.html",
+      "https://www.techrxiv.org/users/934258",
+    ],
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": SITE_URL,
+    },
+    alumniOf: [
+      {
+        "@type": "CollegeOrUniversity",
+        name: "Northeastern University",
+        url: "https://www.northeastern.edu/",
+      },
+    ],
+    knowsAbout: [
+      "Backend Engineering",
+      "Distributed Systems",
+      "Microservices",
+      "Cloud Architecture",
+      "Machine Learning",
+      "Natural Language Processing",
+    ],
+  };
+
+  const stripTrailingSlashJs = `
+(function() {
+  try {
+    var l = window.location;
+    var p = l.pathname || "/";
+    if (p.length > 1 && p.endsWith("/")) {
+      var np = p.replace(/\\/+$/, "");
+      l.replace(l.origin + np + l.search + l.hash);
+    }
+  } catch (e) {}
+})();
+`.trim();
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: stripTrailingSlashJs }} />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
+
       <body
         className={`${inter.variable} ${sora.variable} font-sans text-white antialiased`}
       >
-        {/* Structured data for better discovery on Google */}
-        <Script
-          id="ld-json-website"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Kejian Tong",
-              url: "https://kejian-tong.github.io",
-            }),
-          }}
-        />
-        <Script
-          id="ld-json-person"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Kejian Tong",
-              url: "https://kejian-tong.github.io",
-              jobTitle: "Software Engineer",
-              sameAs: [
-                "https://github.com/kejian-tong",
-                "https://scholar.google.com/citations?user=JUGvC_oAAAAJ&hl=en",
-                "https://www.researchgate.net/profile/Kejian-Tong",
-                "https://www.linkedin.com/in/tongoliver/",
-                "https://orcid.org/0009-0002-5127-2711",
-                "https://ieeexplore.ieee.org/author/658338598189173",
-                "https://www.semanticscholar.org/author/Kejian-Tong/2368457510",
-                "https://arxiv.org/a/tong_k_1.html",
-                "https://www.techrxiv.org/users/934258"
-              ],
-              affiliation: {
-                "@type": "Organization",
-                name: "Northeastern University",
-                url: "https://www.northeastern.edu/",
-                logo: {
-                  "@type": "ImageObject",
-                  url: "https://kejian-tong.github.io/school-logo.svg",
-                },
-              },
-            }),
-          }}
-        />
-        <Script
-          id="ld-json-organization"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Kejian Tong",
-              url: "https://kejian-tong.github.io",
-              logo: "https://kejian-tong.github.io/school-logo.svg",
-            }),
-          }}
-        />
         <Providers>
           <div className="flex min-h-screen flex-col">
             <div className="background-gradient" />

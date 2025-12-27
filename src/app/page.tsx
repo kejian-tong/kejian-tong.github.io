@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import HeroSection from "@/app/components/sections/hero";
 import AboutSection from "@/app/components/sections/about";
 import SkillsSection from "@/app/components/sections/skills";
@@ -7,6 +8,15 @@ import EducationSection from "@/app/components/sections/education";
 import ContactSection from "@/app/components/sections/contact";
 import BlogSection, { type BlogPost } from "@/app/components/sections/blog";
 import { personalData } from "@/utils/data/personal-data";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://kejian-tong.github.io",
+  },
+  openGraph: {
+    url: "https://kejian-tong.github.io",
+  },
+};
 
 async function getBlogPosts(username: string): Promise<BlogPost[]> {
   if (!username) return [];

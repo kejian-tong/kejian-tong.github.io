@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
+const SITE_URL = "https://kejian-tong.github.io";
+
 export const metadata: Metadata = {
   title: "Job Board Platform Case Study",
   description:
     "Full-stack job discovery with scalable APIs and a responsive UI",
+  alternates: {
+    canonical: `${SITE_URL}/projects/job-board`,
+  },
+  openGraph: {
+    url: `${SITE_URL}/projects/job-board`,
+  },
 };
 
 export default function Page() {

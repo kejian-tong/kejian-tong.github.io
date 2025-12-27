@@ -4,6 +4,9 @@ const path = require("path");
 const nextConfig = {
   // Generate a fully static site for GitHub Pages
   output: "export",
+  // By default, Next.js does not add a trailing slash to URLs.
+  // This is the desired behavior for GitHub Pages.
+  trailingSlash: false,
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },

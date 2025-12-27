@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
+const SITE_URL = "https://kejian-tong.github.io";
+
 export const metadata: Metadata = {
   title: "Discord Food Delivery Bot Case Study",
   description:
     "Java/JDA bot for food ordering and restaurant info with MongoDB Atlas and Fly.io",
+  alternates: {
+    canonical: `${SITE_URL}/projects/discord-food-bot`,
+  },
+  openGraph: {
+    url: `${SITE_URL}/projects/discord-food-bot`,
+  },
 };
 
 export default function Page() {
