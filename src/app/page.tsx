@@ -3,7 +3,7 @@ import HeroSection from "@/app/components/sections/hero";
 import AboutSection from "@/app/components/sections/about";
 import SkillsSection from "@/app/components/sections/skills";
 import ProjectsSection from "@/app/components/sections/projects";
-import PapersSection from "@/app/components/sections/papers";
+import PublicationsSection from "@/app/components/sections/publications";
 import EducationSection from "@/app/components/sections/education";
 import ContactSection from "@/app/components/sections/contact";
 import BlogSection, { type BlogPost } from "@/app/components/sections/blog";
@@ -57,7 +57,7 @@ export default async function HomePage() {
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
-      <PapersSection />
+      <PublicationsSection />
       <SkillsSection />
       <EducationSection />
       {shouldShowBlog && <BlogSection posts={posts} />}
