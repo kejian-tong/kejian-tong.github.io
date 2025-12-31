@@ -92,7 +92,7 @@ export default function RootLayout({
     description:
       "Software Engineer and AI Researcher specializing in backend architecture, distributed systems, machine learning, and NLP.",
     // Keep a primary jobTitle for compatibility, and add structured occupations below.
-    jobTitle: "Software Engineer",
+    jobTitle: ["Software Engineer", "AI Researcher"],
     hasOccupation: [
       { "@type": "Occupation", name: "Software Engineer" },
       { "@type": "Occupation", name: "AI Researcher" },
@@ -108,6 +108,7 @@ export default function RootLayout({
       "https://www.semanticscholar.org/author/Kejian-Tong/2368457510",
       "https://arxiv.org/a/tong_k_1.html",
       "https://www.techrxiv.org/users/934258",
+      "https://www.wikidata.org/wiki/Q137643975",
     ],
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -122,6 +123,7 @@ export default function RootLayout({
     ],
     // Use focused topic/field terms (not job titles) for knowsAbout
     knowsAbout: [
+      "Software Engineering",
       "Backend Engineering",
       "Distributed Systems",
       "Microservices",
