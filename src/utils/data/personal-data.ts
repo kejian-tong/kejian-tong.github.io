@@ -31,6 +31,10 @@ export const personalData: PersonalData = {
   showBlog: false,
   socialLinks: [
     { label: "GitHub", href: "https://github.com/kejian-tong" },
+    {
+      label: "Google Scholar",
+      href: "https://scholar.google.com/citations?user=JUGvC_oAAAAJ&hl=en",
+    },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/tongoliver/" },
   ],
   highlights: [
