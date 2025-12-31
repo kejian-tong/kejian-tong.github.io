@@ -85,12 +85,18 @@ export default function RootLayout({
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `${SITE_URL}#person`,
+    // Use a stable, unique id for the person entity to allow reuse across pages
+    "@id": `${SITE_URL}#kejian-tong`,
     name: "Kejian Tong",
     url: SITE_URL,
     description:
       "Software Engineer and AI Researcher specializing in backend architecture, distributed systems, machine learning, and NLP.",
+    // Keep a primary jobTitle for compatibility, and add structured occupations below.
     jobTitle: "Software Engineer",
+    hasOccupation: [
+      { "@type": "Occupation", name: "Software Engineer" },
+      { "@type": "Occupation", name: "AI Researcher" },
+    ],
     image: `${SITE_URL}/card.png`,
     sameAs: [
       "https://github.com/kejian-tong",
@@ -114,13 +120,17 @@ export default function RootLayout({
         url: "https://www.northeastern.edu/",
       },
     ],
+    // Use focused topic/field terms (not job titles) for knowsAbout
     knowsAbout: [
       "Backend Engineering",
       "Distributed Systems",
       "Microservices",
       "Cloud Architecture",
+      "Artificial Intelligence",
       "Machine Learning",
+      "Deep Learning",
       "Natural Language Processing",
+      "Large language models",
     ],
   };
 

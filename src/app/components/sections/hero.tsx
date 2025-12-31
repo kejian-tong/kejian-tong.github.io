@@ -61,6 +61,13 @@ export default function HeroSection() {
             experiences.
           </motion.h1>
           <motion.p
+            className="mt-4 text-base text-white/80"
+            variants={heroVariants}
+          >
+            Software Engineer and AI Researcher focused on AI/ML, NLP, and large
+            language models.
+          </motion.p>
+          <motion.p
             className="max-w-xl text-base text-white/70 sm:text-lg"
             variants={heroVariants}
           >

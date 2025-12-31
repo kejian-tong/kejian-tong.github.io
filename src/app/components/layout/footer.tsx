@@ -2,9 +2,10 @@ import Link from "next/link";
 import { contactsData } from "@/utils/data/contacts-data";
 import { personalData } from "@/utils/data/personal-data";
 
+// Use `personalData.socialLinks` so adding new profiles (e.g., Google Scholar)
+// in `personal-data.ts` automatically surfaces in the footer.
 const socialLinks = [
-  { label: "GitHub", href: contactsData.github },
-  { label: "LinkedIn", href: contactsData.linkedIn },
+  ...personalData.socialLinks,
   { label: "DEV", href: `https://dev.to/${contactsData.devUsername}` },
 ];
 

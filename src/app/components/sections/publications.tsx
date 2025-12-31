@@ -19,6 +19,17 @@ const Publications = () => {
         />
       </FadeInView>
 
+      <div className="mt-4 flex justify-end">
+        <a
+          href="https://scholar.google.com/citations?user=JUGvC_oAAAAJ&hl=en"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/90 transition hover:bg-white/10"
+        >
+          See all publications on Google Scholar
+        </a>
+      </div>
+
       <div className="mt-8 grid gap-6">
         {publications.map((paper, index) => (
           <FadeInView key={index} delay={index * 0.06}>
