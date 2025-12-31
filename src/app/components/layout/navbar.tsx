@@ -9,11 +9,11 @@ import { personalData } from "@/utils/data/personal-data";
 import { ThemeToggle } from "@/app/components/ui/theme-toggle";
 
 const navItems = [
-  { label: "About", href: "/#about" },
-  { label: "Projects", href: "/#projects" },
-  { label: "Publications", href: "/#publications" },
-  { label: "Skills", href: "/#skills" },
-  { label: "Education", href: "/#education" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Publications", href: "#publications" },
+  { label: "Skills", href: "#skills" },
+  { label: "Education", href: "#education" },
   // Writing hidden for now; placeholder kept in codebase.
   // { label: "Writing", href: "/#blog" },
   { label: "Contact", href: "/#contact" },
@@ -82,7 +82,7 @@ export default function Navbar() {
                 href={item.href}
                 className={clsx(
                   "transition hover:text-white",
-                  active && item.href === `/#${active}` && "text-white"
+                  active && item.href === `#${active}` && "text-white"
                 )}
                 onClick={() => setOpen(false)}
               >
@@ -121,7 +121,7 @@ export default function Navbar() {
                 className={clsx(
                   "rounded-xl px-3 py-2 transition hover:bg-white/10 hover:text-white",
                   active &&
-                    item.href === `/#${active}` &&
+                    item.href === `#${active}` &&
                     "bg-white/10 text-white"
                 )}
                 onClick={() => setOpen(false)}
