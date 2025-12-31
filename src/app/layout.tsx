@@ -79,7 +79,7 @@ export default function RootLayout({
     "@type": "WebSite",
     "@id": `${SITE_URL}#website`,
     name: "Kejian Tong",
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
   };
 
   const personJsonLd = {
@@ -88,7 +88,7 @@ export default function RootLayout({
     // Use a stable, unique id for the person entity to allow reuse across pages
     "@id": `${SITE_URL}#kejian-tong`,
     name: "Kejian Tong",
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     description:
       "Software Engineer and AI Researcher specializing in backend architecture, distributed systems, machine learning, and NLP.",
     // Keep a primary jobTitle for compatibility, and add structured occupations below.
@@ -112,7 +112,7 @@ export default function RootLayout({
     ],
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": SITE_URL,
+      "@id": `${SITE_URL}/`,
     },
     alumniOf: [
       {
