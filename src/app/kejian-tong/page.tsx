@@ -71,6 +71,7 @@ export default function KejianTongPage() {
       "Machine Learning",
       "Deep Learning",
       "Natural Language Processing",
+      "Large Language Models",
       "Software Engineering",
       "Backend Engineering",
       "Distributed Systems",
@@ -169,8 +170,8 @@ export default function KejianTongPage() {
 
           {/* Education */}
           <section className="rounded-3xl border border-white/10 bg-black/30 p-8 backdrop-blur">
-            <h2 className="text-2xl font-bold text-red-400 mb-4">
-              ## Education
+            <h2 className="font-display text-2xl font-bold text-white">
+              Education
             </h2>
             <ul className="space-y-2 text-white/70">
               <li className="flex items-start gap-2">
@@ -184,8 +185,8 @@ export default function KejianTongPage() {
 
           {/* Research Interests */}
           <section className="rounded-3xl border border-white/10 bg-black/30 p-8 backdrop-blur">
-            <h2 className="text-2xl font-bold text-red-400 mb-4">
-              ## Research Interests
+            <h2 className="font-display text-2xl font-bold text-white">
+              Research Interests
             </h2>
             <ul className="space-y-2 text-white/70">
               <li className="flex items-start gap-2">
@@ -204,13 +205,17 @@ export default function KejianTongPage() {
                 <span className="text-white/50">–</span>
                 <span>Natural Language Processing</span>
               </li>
+              <li className="flex items-start gap-2">
+                <span className="text-white/50">–</span>
+                <span>Large Language Models (LLM)</span>
+              </li>
             </ul>
           </section>
 
           {/* Publications & Research */}
           <section className="rounded-3xl border border-white/10 bg-black/30 p-8 backdrop-blur">
-            <h2 className="text-2xl font-bold text-red-400 mb-4">
-              ## Publications &amp; Research
+            <h2 className="font-display text-2xl font-bold text-white">
+              Publications &amp; Research
             </h2>
             <ul className="space-y-2 text-white/70">
               <li className="flex items-start gap-2">
@@ -274,8 +279,8 @@ export default function KejianTongPage() {
 
           {/* Professional Profiles */}
           <section className="rounded-3xl border border-white/10 bg-black/30 p-8 backdrop-blur">
-            <h2 className="text-2xl font-bold text-red-400 mb-4">
-              ## Professional Profiles
+            <h2 className="font-display text-2xl font-bold text-white">
+              Professional Profiles
             </h2>
             <ul className="space-y-2 text-white/70">
               <li className="flex items-start gap-2">
@@ -317,27 +322,6 @@ export default function KejianTongPage() {
                     [link]
                   </Link>
                 </span>
-              </li>
-            </ul>
-          </section>
-
-          {/* Guidelines */}
-          <section className="mt-12 pt-8 border-t border-white/10">
-            <h3 className="text-lg font-semibold text-white/60 mb-4">
-              Principles
-            </h3>
-            <ul className="space-y-2 text-sm text-white/50">
-              <li className="flex items-start gap-2">
-                <span>•</span>
-                <span>Third-person narrative style, encyclopedia format</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>•</span>
-                <span>No promotional language</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>•</span>
-                <span>All statements verifiable through citations</span>
               </li>
             </ul>
           </section>
