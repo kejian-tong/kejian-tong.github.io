@@ -16,30 +16,29 @@ export default function AboutSection() {
             About
           </p>
           <h2 className="font-display text-3xl text-white sm:text-4xl">
-            Engineer focused on scalable, reliable systems.
+            Software Engineer & AI Researcher
           </h2>
           <div className="space-y-4 text-base leading-relaxed text-white/70">
             <p>
-              I’m a Software Engineer specializing in backend architecture,
-              distributed systems, and microservice-based application design. I
-              focus on building scalable, reliable, and high-performance
-              platforms that power modern enterprise workflows and data-driven
-              services.
+              I&apos;m a Software Engineer and AI Researcher specializing in
+              backend architecture, distributed systems, artificial
+              intelligence, and machine learning. I focus on building scalable,
+              intelligent systems that power modern enterprise workflows and
+              data-driven services.
             </p>
             <p>
-              In recent projects, I’ve designed and optimized distributed
-              microservices with Kafka, Redis, and RESTful APIs, enabling
-              asynchronous communication and real-time data processing at scale.
-              I’ve also containerized and deployed applications using Docker and
-              CI/CD pipelines, ensuring efficient delivery and consistent system
-              behavior across multiple environments.
+              I earned my Master of Science in Computer Science from
+              Northeastern University and have published peer-reviewed research
+              in IEEE and international conferences. My academic work focuses on
+              intelligent systems, natural language processing, and large-scale
+              machine learning applications.
             </p>
             <p>
-              My work emphasizes system scalability, fault tolerance, and
-              performance optimization—from designing event-driven pipelines to
-              fine-tuning database queries for high-concurrency workloads. I
-              value clean architecture, well-documented APIs, and automation
-              that drives engineering efficiency.
+              In industry, I&apos;ve designed and optimized distributed
+              microservices with modern technologies, enabling real-time data
+              processing at scale. I combine strong engineering principles with
+              research insights to build practical AI solutions that solve
+              real-world problems.
             </p>
           </div>
           {personalData.technicalFocus &&

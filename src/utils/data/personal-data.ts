@@ -19,9 +19,9 @@ export interface PersonalData {
 
 export const personalData: PersonalData = {
   name: "Kejian Tong",
-  role: "Software Engineer",
+  role: "Software Engineer / AI Researcher",
   summary:
-    "I’m a Software Engineer specializing in backend architecture, distributed systems, and microservice-based application design. I focus on building scalable, reliable, and high-performance platforms that power modern enterprise workflows and data-driven services.",
+    "I'm a Software Engineer and AI Researcher specializing in backend architecture, distributed systems, artificial intelligence, and machine learning. I focus on building scalable, intelligent systems that power modern enterprise workflows and data-driven services.",
   profileImage: "/profile.png",
   email: "tongcs2021@gmail.com",
   location: "Seattle, WA",
@@ -38,16 +38,19 @@ export const personalData: PersonalData = {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/tongoliver/" },
   ],
   highlights: [
-    "Distributed systems & cloud architecture",
-    "Backend engineering with Java, Go, Python, and Node.js",
-    "Full‑stack delivery with React, Next.js, and TypeScript",
+    "Backend engineering & distributed systems",
+    "AI/ML research & applied machine learning",
+    "Full‑stack development with modern frameworks",
   ],
   technicalFocus: [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Deep Learning",
+    "Natural Language Processing",
+    "Large Language Models",
     "Java",
-    "Go",
     "Python",
     "TypeScript",
-    "Node.js",
     "React",
     "Redis",
     "Kafka",

@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes = [
     "/",
+    "/kejian-tong",
     // include all projects from data to avoid manual maintenance
     ...projectsData.map((p) => `/projects/${p.slug}`),
   ];
