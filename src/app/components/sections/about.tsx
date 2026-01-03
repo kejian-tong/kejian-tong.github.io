@@ -20,11 +20,11 @@ export default function AboutSection() {
           </h2>
           <div className="space-y-4 text-base leading-relaxed text-white/70">
             <p>
-              I'm a Software Engineer and AI Researcher specializing in backend
-              architecture, distributed systems, artificial intelligence, and
-              machine learning. I focus on building scalable, intelligent
-              systems that power modern enterprise workflows and data-driven
-              services.
+              I&apos;m a Software Engineer and AI Researcher specializing in
+              backend architecture, distributed systems, artificial
+              intelligence, and machine learning. I focus on building scalable,
+              intelligent systems that power modern enterprise workflows and
+              data-driven services.
             </p>
             <p>
               I earned my Master of Science in Computer Science from
@@ -34,11 +34,11 @@ export default function AboutSection() {
               machine learning applications.
             </p>
             <p>
-              In industry, I've designed and optimized distributed microservices
-              with modern technologies, enabling real-time data processing at
-              scale. I combine strong engineering principles with research
-              insights to build practical AI solutions that solve real-world
-              problems.
+              In industry, I&apos;ve designed and optimized distributed
+              microservices with modern technologies, enabling real-time data
+              processing at scale. I combine strong engineering principles with
+              research insights to build practical AI solutions that solve
+              real-world problems.
             </p>
           </div>
           {personalData.technicalFocus &&

@@ -6,14 +6,14 @@ const SITE_URL = "https://kejian-tong.github.io";
 export const metadata: Metadata = {
   title: "Kejian Tong - Software Engineer and AI Researcher",
   description:
-    "Kejian Tong is a software engineer and AI researcher specializing in artificial intelligence, machine learning, deep learning, and natural language processing. He earned his Master of Science in Computer Science from Northeastern University.",
+    "Kejian Tong is a software engineer and AI researcher specializing in artificial intelligence, machine learning, deep learning, large language models, and natural language processing. He earned his Master of Science in Computer Science from Northeastern University.",
   alternates: {
     canonical: `${SITE_URL}/kejian-tong`,
   },
   openGraph: {
     title: "Kejian Tong - Software Engineer and AI Researcher",
     description:
-      "Software Engineer and AI Researcher specializing in artificial intelligence, machine learning, deep learning, and natural language processing.",
+      "Software Engineer and AI Researcher specializing in artificial intelligence, machine learning, deep learning, large language models, and natural language processing.",
     url: `${SITE_URL}/kejian-tong`,
     type: "profile",
   },
@@ -34,7 +34,7 @@ export default function KejianTongPage() {
       "@id": `${SITE_URL}/kejian-tong`,
     },
     description:
-      "Software Engineer and AI Researcher specializing in artificial intelligence, machine learning, deep learning, and natural language processing.",
+      "Software Engineer and AI Researcher specializing in artificial intelligence, machine learning, deep learning, large language models, and natural language processing.",
     jobTitle: ["Software Engineer", "AI Researcher"],
     hasOccupation: [
       {
