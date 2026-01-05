@@ -52,6 +52,7 @@ export default function Footer() {
                   <Link
                     href={item.href}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="transition hover:text-white"
                   >
                     {item.label}

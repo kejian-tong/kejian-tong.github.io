@@ -8,6 +8,7 @@ import EducationSection from "@/app/components/sections/education";
 import ContactSection from "@/app/components/sections/contact";
 import BlogSection, { type BlogPost } from "@/app/components/sections/blog";
 import { personalData } from "@/utils/data/personal-data";
+import devtoFallback from "@/utils/data/devto-fallback.json";
 
 export const metadata: Metadata = {
   alternates: {
@@ -20,26 +21,23 @@ export const metadata: Metadata = {
 
 async function getBlogPosts(username: string): Promise<BlogPost[]> {
   if (!username) return [];
+  const fallbackPosts = devtoFallback as BlogPost[];
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 4000);
   try {
     const response = await fetch(
       `https://dev.to/api/articles?username=${username}`,
-      {
-        next: { revalidate: 60 * 60 }, // refresh hourly without hammering the API
-        signal: controller.signal,
-      }
+      { signal: controller.signal }
     );
-    if (!response.ok) return [];
+    if (!response.ok) return fallbackPosts.length ? fallbackPosts : [];
     const articles = (await response.json()) as BlogPost[];
     return articles.filter((article) => article.cover_image).slice(0, 3);
   } catch (err) {
-    // Silence abort and network errors so the homepage doesn't fail rendering
     if ((err as Error)?.name !== "AbortError") {
       // eslint-disable-next-line no-console
       console.error("Failed to fetch blog posts:", err);
     }
-    return [];
+    return fallbackPosts.length ? fallbackPosts : [];
   } finally {
     clearTimeout(timeout);
   }
@@ -49,7 +47,7 @@ export default async function HomePage() {
   const shouldShowBlog = Boolean(
     personalData.showBlog && personalData.devUsername
   );
-  const posts = shouldShowBlog
+  const initialPosts = shouldShowBlog
     ? await getBlogPosts(personalData.devUsername)
     : [];
   return (
@@ -60,7 +58,12 @@ export default async function HomePage() {
       <PublicationsSection />
       <SkillsSection />
       <EducationSection />
-      {shouldShowBlog && <BlogSection posts={posts} />}
+      {shouldShowBlog && (
+        <BlogSection
+          username={personalData.devUsername}
+          initialPosts={initialPosts}
+        />
+      )}
       <ContactSection />
     </div>
   );

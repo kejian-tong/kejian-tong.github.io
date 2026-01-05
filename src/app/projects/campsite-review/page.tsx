@@ -11,7 +11,18 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/projects/campsite-review`,
   },
   openGraph: {
+    title: "Campsite Review Explorer Case Study",
+    description:
+      "Full‑stack JavaScript app for browsing campsite reviews with CRUD APIs, MongoDB Atlas, and Cloudinary",
     url: `${SITE_URL}/projects/campsite-review`,
+    images: [
+      {
+        url: "/image/ayla.jpg",
+        width: 1200,
+        height: 700,
+        alt: "Campsite review explorer preview",
+      },
+    ],
   },
 };
 
