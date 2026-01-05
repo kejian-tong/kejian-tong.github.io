@@ -220,4 +220,5 @@ MIT License
 
 ---
 
+[1.1.0]: https://github.com/kejian-tong/kejian-tong.github.io/releases/tag/v1.1.0
 [1.0.0]: https://github.com/kejian-tong/kejian-tong.github.io/releases/tag/v1.0.0
