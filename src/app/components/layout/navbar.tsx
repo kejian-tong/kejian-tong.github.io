@@ -28,7 +28,7 @@ export default function Navbar() {
 
   const toggleMenu = () => setOpen((prev) => !prev);
 
-  // Observe sections to highlight the active nav item (only on homepage)
+  // Track scroll position to highlight the active nav item (only on homepage)
   useEffect(() => {
     if (!isHomePage) {
       setActive("");
@@ -43,26 +43,43 @@ export default function Navbar() {
       "education",
       "contact",
     ]; // blog hidden
-    const elements = ids
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => Boolean(el));
 
-    if (elements.length === 0) return;
+    let ticking = false;
+    const offset = 120; // account for fixed header + spacing
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort(
-            (a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0)
-          );
-        if (visible[0]?.target?.id) setActive(visible[0].target.id);
-      },
-      { rootMargin: "-30% 0px -60% 0px", threshold: [0.25, 0.5, 0.75] }
-    );
+    const updateActive = () => {
+      const sections = ids
+        .map((id) => document.getElementById(id))
+        .filter((el): el is HTMLElement => Boolean(el));
+      if (sections.length === 0) return;
 
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+      let current: string | null = null;
+      sections.forEach((section) => {
+        const top = section.getBoundingClientRect().top;
+        if (top <= offset) {
+          current = section.id;
+        }
+      });
+
+      setActive(current ?? "");
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        updateActive();
+        ticking = false;
+      });
+    };
+
+    updateActive();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, [isHomePage]);
 
   return (
