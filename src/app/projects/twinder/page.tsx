@@ -11,7 +11,18 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/projects/twinder`,
   },
   openGraph: {
+    title: "Twinder Microservice Case Study",
+    description:
+      "A scalable, event-driven service for high-volume swipe and match workloads",
     url: `${SITE_URL}/projects/twinder`,
+    images: [
+      {
+        url: "/image/crefin.jpg",
+        width: 1200,
+        height: 700,
+        alt: "Twinder microservice preview",
+      },
+    ],
   },
 };
 

@@ -1,7 +1,4 @@
 "use client";
-import React from "react";
-
-import Link from "next/link";
 
 import { publications } from "@/utils/data/publications-data";
 import { SectionHeading } from "@/app/components/ui/section-heading";

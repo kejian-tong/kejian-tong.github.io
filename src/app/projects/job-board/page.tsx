@@ -11,7 +11,18 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/projects/job-board`,
   },
   openGraph: {
+    title: "Job Board Platform Case Study",
+    description:
+      "Full-stack job discovery with scalable APIs and a responsive UI",
     url: `${SITE_URL}/projects/job-board`,
+    images: [
+      {
+        url: "/image/travel.jpg",
+        width: 1200,
+        height: 700,
+        alt: "Job board platform preview",
+      },
+    ],
   },
 };
 

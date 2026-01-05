@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
 import { personalData } from "@/utils/data/personal-data";
-import { contactsData } from "@/utils/data/contacts-data";
 import { FadeInView } from "@/app/components/ui/fade-in-view";
 
 // Quick Facts card removed per request to simplify About section.

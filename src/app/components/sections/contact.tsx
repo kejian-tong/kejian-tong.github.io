@@ -125,10 +125,14 @@ export default function ContactSection() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wide text-white/50">
+                <label
+                  htmlFor="contact-email"
+                  className="block text-xs font-semibold uppercase tracking-wide text-white/50"
+                >
                   Your email
                 </label>
                 <input
+                  id="contact-email"
                   type="email"
                   name="email"
                   required
@@ -139,10 +143,14 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wide text-white/50">
+                <label
+                  htmlFor="contact-name"
+                  className="block text-xs font-semibold uppercase tracking-wide text-white/50"
+                >
                   Name
                 </label>
                 <input
+                  id="contact-name"
                   type="text"
                   name="name"
                   required
@@ -154,10 +162,14 @@ export default function ContactSection() {
               </div>
             </div>
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-white/50">
+              <label
+                htmlFor="contact-title"
+                className="block text-xs font-semibold uppercase tracking-wide text-white/50"
+              >
                 Title
               </label>
               <input
+                id="contact-title"
                 type="text"
                 name="title"
                 required
@@ -168,10 +180,14 @@ export default function ContactSection() {
               />
             </div>
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-white/50">
+              <label
+                htmlFor="contact-message"
+                className="block text-xs font-semibold uppercase tracking-wide text-white/50"
+              >
                 Message
               </label>
               <textarea
+                id="contact-message"
                 name="message"
                 required
                 value={form.message}
@@ -216,6 +232,7 @@ export default function ContactSection() {
                 key={s.label}
                 href={s.href}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-white/80 transition hover:text-white"
               >
                 {s.label}

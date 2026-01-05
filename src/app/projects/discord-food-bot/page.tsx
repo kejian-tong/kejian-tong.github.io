@@ -11,7 +11,18 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/projects/discord-food-bot`,
   },
   openGraph: {
+    title: "Discord Food Delivery Bot Case Study",
+    description:
+      "Java/JDA bot for food ordering and restaurant info with MongoDB Atlas and Fly.io",
     url: `${SITE_URL}/projects/discord-food-bot`,
+    images: [
+      {
+        url: "/image/real-estate.jpg",
+        width: 1200,
+        height: 700,
+        alt: "Discord food delivery bot preview",
+      },
+    ],
   },
 };
 
