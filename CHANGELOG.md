@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 2026-01-05
+
+### ✨ Added
+
+- Google Scholar link surfaced in personal data and Publications/footers.
+- Repository governance docs: SECURITY.md, CODE_OF_CONDUCT.md, CONTRIBUTING.md, LICENSE, and issue templates.
+
+### 🔧 Changed
+
+- Publications taxonomy and data cleanup (rename from Papers).
+- SEO metadata improvements and enhanced JSON-LD coverage.
+- Navigation anchor handling standardized for reliable cross-page linking.
+- Blog rendering strategy upgraded (build-time HTML + client refresh + cache, when enabled).
+- Project pages enriched with Open Graph metadata for accurate sharing.
+
+### 🐛 Fixed
+
+- Navbar active-state highlighting on initial homepage load.
+- Minor link and layout polish across sections.
+
+---
+
 ## [1.0.0] - 2025-10-31
 
 ### 🎉 Initial Release
