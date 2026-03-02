@@ -82,85 +82,20 @@ export default function RootLayout({
     url: SITE_URL,
   };
 
-  const personJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    // Use a stable, unique id for the person entity to allow reuse across pages
-    "@id": `${SITE_URL}#kejian-tong`,
-    name: "Kejian Tong",
-    url: SITE_URL,
-    description:
-      "Software Engineer and AI Researcher specializing in backend architecture, distributed systems, machine learning, and NLP.",
-    // Keep a primary jobTitle for compatibility, and add structured occupations below.
-    jobTitle: ["Software Engineer", "AI Researcher"],
-    hasOccupation: [
-      { "@type": "Occupation", name: "Software Engineer" },
-      { "@type": "Occupation", name: "AI Researcher" },
-    ],
-    image: `${SITE_URL}/card.png`,
-    sameAs: [
-      "https://github.com/kejian-tong",
-      "https://scholar.google.com/citations?user=JUGvC_oAAAAJ&hl=en",
-      "https://www.researchgate.net/profile/Kejian-Tong",
-      "https://www.linkedin.com/in/tongoliver/",
-      "https://orcid.org/0009-0002-5127-2711",
-      "https://ieeexplore.ieee.org/author/658338598189173",
-      "https://www.semanticscholar.org/author/Kejian-Tong/2368457510",
-      "https://arxiv.org/a/tong_k_1.html",
-      "https://www.techrxiv.org/users/934258",
-      "https://www.wikidata.org/wiki/Q137643975",
-    ],
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": SITE_URL,
-    },
-    alumniOf: [
-      {
-        "@type": "CollegeOrUniversity",
-        name: "Northeastern University",
-        url: "https://www.northeastern.edu/",
-      },
-    ],
-    // Use focused topic/field terms (not job titles) for knowsAbout
-    knowsAbout: [
-      "Software Engineering",
-      "Backend Engineering",
-      "Distributed Systems",
-      "Microservices",
-      "Cloud Architecture",
-      "Artificial Intelligence",
-      "Machine Learning",
-      "Deep Learning",
-      "Natural Language Processing",
-      "Large language models",
-    ],
-  };
+  // Note: we intentionally do not declare a Person JSON-LD here.  the
+  // `/kejian-tong` page is the canonical, unique entity page and emits
+  // the only Person object.  keeping two makes Google see conflicting
+  // entities which can hurt Knowledge Panel stability.
 
-  const stripTrailingSlashJs = `
-(function() {
-  try {
-    var l = window.location;
-    var p = l.pathname || "/";
-    if (p.length > 1 && p.endsWith("/")) {
-      var np = p.replace(/\\/+$/, "");
-      l.replace(l.origin + np + l.search + l.hash);
-    }
-  } catch (e) {}
-})();
-`.trim();
+  // removed client-side URL normalization per SEO advice —
+  // canonical and server output already stabilise paths.
 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: stripTrailingSlashJs }} />
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
       </head>
 
