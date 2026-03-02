@@ -28,7 +28,8 @@ export default function KejianTongPage() {
     name: "Kejian Tong",
     givenName: "Kejian",
     familyName: "Tong",
-    url: SITE_URL,
+    // point the person URL at the dedicated entity page, not the site root
+    url: `${SITE_URL}/kejian-tong`,
     mainEntityOfPage: {
       "@type": "ProfilePage",
       "@id": `${SITE_URL}/kejian-tong`,
@@ -37,22 +38,8 @@ export default function KejianTongPage() {
       "Software Engineer and AI Researcher specializing in artificial intelligence, machine learning, deep learning, large language models, and natural language processing.",
     jobTitle: ["Software Engineer", "AI Researcher"],
     hasOccupation: [
-      {
-        "@type": "Occupation",
-        name: "Software Engineer",
-        occupationLocation: {
-          "@type": "Country",
-          name: "United States",
-        },
-      },
-      {
-        "@type": "Occupation",
-        name: "AI Researcher",
-        occupationLocation: {
-          "@type": "Country",
-          name: "United States",
-        },
-      },
+      { "@type": "Occupation", name: "Software Engineer" },
+      { "@type": "Occupation", name: "AI Researcher" },
     ],
     alumniOf: {
       "@type": "CollegeOrUniversity",
