@@ -29,7 +29,7 @@ const Publications = () => {
 
       <div className="mt-8 grid gap-6">
         {publications.map((paper, index) => (
-          <FadeInView key={paper.title} delay={index * 0.06}>
+          <FadeInView key={paper.href} delay={index * 0.06}>
             <motion.article
               whileHover={{ scale: 1.03, y: -4 }}
               className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/30 transition-shadow hover:shadow-xl hover:shadow-blue-500/20"
