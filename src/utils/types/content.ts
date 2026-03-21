@@ -6,11 +6,14 @@ export interface TimelineItem {
   id: number;
   title: string;
   organization: string;
-  period: string;
+  period?: string;
   location?: string;
 }
 export interface EducationItem extends TimelineItem {
   credential?: string;
+}
+export interface ExperienceItem extends TimelineItem {
+  bullets?: string[];
 }
 export interface SkillGroup {
   title: string;
