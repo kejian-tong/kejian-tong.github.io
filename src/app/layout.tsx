@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Kejian Tong",
   },
   description:
-    "Official personal website of Kejian Tong — Software Engineer and AI Researcher specializing in backend architecture, distributed systems, machine learning, and NLP.",
+    "Official personal website of Kejian Tong — Software Engineer and AI Researcher specializing in backend architecture, distributed systems, agentic AI, LLM, RAG, prompt engineering, MCP, and NLP.",
 
   // Google Search Console verification (meta name="google-site-verification")
   verification: {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Kejian Tong",
     title: "Kejian Tong | Software Engineer | AI Researcher",
     description:
-      "Official personal website of Kejian Tong — Software Engineer and AI Researcher specializing in backend architecture, distributed systems, machine learning, and NLP.",
+      "Official personal website of Kejian Tong — Software Engineer and AI Researcher specializing in backend architecture, distributed systems, agentic AI, LLM, RAG, prompt engineering, MCP, and NLP.",
     images: [
       {
         url: "/card.png",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kejian Tong | Software Engineer | AI Researcher",
     description:
-      "Official personal website of Kejian Tong — Software Engineer and AI Researcher specializing in backend architecture, distributed systems, machine learning, and NLP.",
+      "Official personal website of Kejian Tong — Software Engineer and AI Researcher specializing in backend architecture, distributed systems, agentic AI, LLM, RAG, prompt engineering, MCP, and NLP.",
     images: ["/card.png"],
   },
 
