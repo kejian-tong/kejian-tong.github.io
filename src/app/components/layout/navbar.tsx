@@ -10,6 +10,7 @@ import { ThemeToggle } from "@/app/components/ui/theme-toggle";
 
 const navItems = [
   { label: "About", href: "/#about" },
+  { label: "Experience", href: "/#experience" },
   { label: "Projects", href: "/#projects" },
   { label: "Publications", href: "/#publications" },
   { label: "Skills", href: "/#skills" },
@@ -37,6 +38,7 @@ export default function Navbar() {
 
     const ids = [
       "about",
+      "experience",
       "projects",
       "publications",
       "skills",
@@ -100,7 +102,7 @@ export default function Navbar() {
                 href={item.href}
                 className={clsx(
                   "transition hover:text-white",
-                  active && item.href === activeHref && "text-white"
+                  active && item.href === activeHref && "text-white",
                 )}
                 onClick={() => setOpen(false)}
               >
@@ -127,7 +129,7 @@ export default function Navbar() {
         className={clsx(
           "md:hidden",
           "origin-top overflow-hidden transition-[max-height] duration-300 ease-out",
-          open ? "max-h-96" : "max-h-0"
+          open ? "max-h-96" : "max-h-0",
         )}
       >
         <div className="mx-4 mb-4 rounded-2xl border border-white/10 bg-black/60 px-4 py-5 text-white/80 shadow-xl">
@@ -140,7 +142,7 @@ export default function Navbar() {
                   "rounded-xl px-3 py-2 transition hover:bg-white/10 hover:text-white",
                   active &&
                     item.href === activeHref &&
-                    "bg-white/10 text-white"
+                    "bg-white/10 text-white",
                 )}
                 onClick={() => setOpen(false)}
               >
