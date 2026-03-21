@@ -12,6 +12,9 @@ export interface TimelineItem {
 export interface EducationItem extends TimelineItem {
   credential?: string;
 }
+export interface ExperienceItem extends TimelineItem {
+  bullets?: string[];
+}
 export interface SkillGroup {
   title: string;
   description?: string;

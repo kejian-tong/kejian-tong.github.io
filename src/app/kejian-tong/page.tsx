@@ -170,6 +170,37 @@ export default function KejianTongPage() {
             </ul>
           </section>
 
+          {/* Experience */}
+          <section className="rounded-3xl border border-white/10 bg-black/30 p-8 backdrop-blur">
+            <h2 className="font-display text-2xl font-bold text-white">
+              Experience
+            </h2>
+            <ul className="mt-4 space-y-2 text-white/70">
+              <li className="flex items-start gap-2">
+                <span className="text-white/50">–</span>
+                <span>Software Engineer, Lennar — United States</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-white/50">–</span>
+                <span>Software Engineer, Barclays — United States</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-white/50">–</span>
+                <span>
+                  Software Engineer Intern, Dell Technologies — Seattle, WA
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-white/50">–</span>
+                <span>Software Engineer Intern, Akoya — Seattle, WA</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-white/50">–</span>
+                <span>Software Engineer Intern, Pearson — Seattle, WA</span>
+              </li>
+            </ul>
+          </section>
+
           {/* Research Interests */}
           <section className="rounded-3xl border border-white/10 bg-black/30 p-8 backdrop-blur">
             <h2 className="font-display text-2xl font-bold text-white">
@@ -207,59 +238,47 @@ export default function KejianTongPage() {
             <ul className="space-y-2 text-white/70">
               <li className="flex items-start gap-2">
                 <span className="text-white/50">–</span>
-                <span>
-                  Google Scholar:{" "}
-                  <a
-                    href="https://scholar.google.com/citations?user=JUGvC_oAAAAJ&hl=en"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
-                  >
-                    [link]
-                  </a>
-                </span>
+                <a
+                  href="https://scholar.google.com/citations?user=JUGvC_oAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-white"
+                >
+                  Google Scholar
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-white/50">–</span>
-                <span>
-                  ResearchGate:{" "}
-                  <a
-                    href="https://www.researchgate.net/profile/Kejian-Tong"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
-                  >
-                    [link]
-                  </a>
-                </span>
+                <a
+                  href="https://www.researchgate.net/profile/Kejian-Tong"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-white"
+                >
+                  ResearchGate
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-white/50">–</span>
-                <span>
-                  ORCID:{" "}
-                  <a
-                    href="https://orcid.org/0009-0002-5127-2711"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
-                  >
-                    [link]
-                  </a>
-                </span>
+                <a
+                  href="https://orcid.org/0009-0002-5127-2711"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-white"
+                >
+                  ORCID
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-white/50">–</span>
-                <span>
-                  arXiv:{" "}
-                  <a
-                    href="https://arxiv.org/a/tong_k_1.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
-                  >
-                    [link]
-                  </a>
-                </span>
+                <a
+                  href="https://arxiv.org/a/tong_k_1.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-white"
+                >
+                  arXiv
+                </a>
               </li>
             </ul>
           </section>
@@ -272,43 +291,31 @@ export default function KejianTongPage() {
             <ul className="space-y-2 text-white/70">
               <li className="flex items-start gap-2">
                 <span className="text-white/50">–</span>
-                <span>
-                  LinkedIn:{" "}
-                  <a
-                    href="https://www.linkedin.com/in/tongoliver/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
-                  >
-                    [link]
-                  </a>
-                </span>
+                <a
+                  href="https://www.linkedin.com/in/tongoliver/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-white"
+                >
+                  LinkedIn
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-white/50">–</span>
-                <span>
-                  GitHub:{" "}
-                  <a
-                    href="https://github.com/kejian-tong"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
-                  >
-                    [link]
-                  </a>
-                </span>
+                <a
+                  href="https://github.com/kejian-tong"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-white"
+                >
+                  GitHub
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-white/50">–</span>
-                <span>
-                  Personal Website:{" "}
-                  <Link
-                    href="/"
-                    className="text-blue-400 hover:text-blue-300 underline"
-                  >
-                    [link]
-                  </Link>
-                </span>
+                <Link href="/" className="transition hover:text-white">
+                  Personal Website
+                </Link>
               </li>
             </ul>
           </section>
