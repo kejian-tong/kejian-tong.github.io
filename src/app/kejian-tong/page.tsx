@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { experiences } from "@/utils/data/experience";
 
 const SITE_URL = "https://kejian-tong.github.io";
 
@@ -176,28 +177,15 @@ export default function KejianTongPage() {
               Experience
             </h2>
             <ul className="mt-4 space-y-2 text-white/70">
-              <li className="flex items-start gap-2">
-                <span className="text-white/50">–</span>
-                <span>Software Engineer, Lennar — United States</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-white/50">–</span>
-                <span>Software Engineer, Barclays — United States</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-white/50">–</span>
-                <span>
-                  Software Engineer Intern, Dell Technologies — Seattle, WA
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-white/50">–</span>
-                <span>Software Engineer Intern, Akoya — Seattle, WA</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-white/50">–</span>
-                <span>Software Engineer Intern, Pearson — Seattle, WA</span>
-              </li>
+              {experiences.map((exp) => (
+                <li key={exp.id} className="flex items-start gap-2">
+                  <span className="text-white/50">–</span>
+                  <span>
+                    {exp.title}, {exp.organization}
+                    {exp.location ? ` — ${exp.location}` : ""}
+                  </span>
+                </li>
+              ))}
             </ul>
           </section>
 
