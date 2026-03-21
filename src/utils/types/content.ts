@@ -6,7 +6,7 @@ export interface TimelineItem {
   id: number;
   title: string;
   organization: string;
-  period: string;
+  period?: string;
   location?: string;
 }
 export interface EducationItem extends TimelineItem {
