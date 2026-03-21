@@ -5,7 +5,6 @@ import SkillsSection from "@/app/components/sections/skills";
 import ProjectsSection from "@/app/components/sections/projects";
 import PublicationsSection from "@/app/components/sections/publications";
 import EducationSection from "@/app/components/sections/education";
-import ExperienceSection from "@/app/components/sections/experience";
 import ContactSection from "@/app/components/sections/contact";
 import BlogSection, { type BlogPost } from "@/app/components/sections/blog";
 import { personalData } from "@/utils/data/personal-data";
@@ -28,7 +27,7 @@ async function getBlogPosts(username: string): Promise<BlogPost[]> {
   try {
     const response = await fetch(
       `https://dev.to/api/articles?username=${username}`,
-      { signal: controller.signal },
+      { signal: controller.signal }
     );
     if (!response.ok) return fallbackPosts.length ? fallbackPosts : [];
     const articles = (await response.json()) as BlogPost[];
@@ -46,7 +45,7 @@ async function getBlogPosts(username: string): Promise<BlogPost[]> {
 
 export default async function HomePage() {
   const shouldShowBlog = Boolean(
-    personalData.showBlog && personalData.devUsername,
+    personalData.showBlog && personalData.devUsername
   );
   const initialPosts = shouldShowBlog
     ? await getBlogPosts(personalData.devUsername)
@@ -55,10 +54,9 @@ export default async function HomePage() {
     <div className="space-y-24">
       <HeroSection />
       <AboutSection />
-      <ExperienceSection />
-      <SkillsSection />
       <ProjectsSection />
       <PublicationsSection />
+      <SkillsSection />
       <EducationSection />
       {shouldShowBlog && (
         <BlogSection

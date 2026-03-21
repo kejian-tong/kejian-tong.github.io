@@ -11,7 +11,7 @@ const Publications = () => {
       <FadeInView>
         <SectionHeading
           eyebrow="Publications"
-          title="Research & Papers"
+          title="Publications"
           description="Selected peer-reviewed papers and preprints."
         />
       </FadeInView>
@@ -29,8 +29,16 @@ const Publications = () => {
 
       <div className="mt-8 grid gap-6">
         {publications.map((paper, index) => (
-          <FadeInView key={paper.href} delay={index * 0.06}>
+          <FadeInView key={index} delay={index * 0.06}>
             <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.06,
+                ease: "easeOut",
+              }}
               whileHover={{ scale: 1.03, y: -4 }}
               className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/30 transition-shadow hover:shadow-xl hover:shadow-blue-500/20"
             >
