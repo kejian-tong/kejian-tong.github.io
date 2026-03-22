@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { contactsData } from "@/utils/data/contacts-data";
 import { personalData } from "@/utils/data/personal-data";
+import { getDevToUrl } from "@/utils/data/site-config";
 
 // Use `personalData.socialLinks` so adding new profiles (e.g., Google Scholar)
 // in `personal-data.ts` automatically surfaces in the footer.
+const devToUrl = getDevToUrl(contactsData.devUsername);
 const socialLinks = [
   ...personalData.socialLinks,
-  { label: "DEV", href: `https://dev.to/${contactsData.devUsername}` },
-];
+  ...(devToUrl ? [{ label: "DEV", href: devToUrl }] : []),
+].filter((item) => item.href);
 
 export default function Footer() {
   const year = new Date().getFullYear();

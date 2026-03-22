@@ -9,14 +9,15 @@ import ExperienceSection from "@/app/components/sections/experience";
 import ContactSection from "@/app/components/sections/contact";
 import BlogSection, { type BlogPost } from "@/app/components/sections/blog";
 import { personalData } from "@/utils/data/personal-data";
+import { siteConfig } from "@/utils/data/site-config";
 import devtoFallback from "@/utils/data/devto-fallback.json";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://kejian-tong.github.io",
+    canonical: siteConfig.url,
   },
   openGraph: {
-    url: "https://kejian-tong.github.io",
+    url: siteConfig.url,
   },
 };
 

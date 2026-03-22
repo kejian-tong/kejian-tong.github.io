@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-
-const SITE_URL = "https://kejian-tong.github.io";
+import { absoluteUrl } from "@/utils/data/site-config";
 
 export const metadata: Metadata = {
   title: "Campsite Review Explorer Case Study",
   description:
     "Full‑stack JavaScript app for browsing campsite reviews with CRUD APIs, MongoDB Atlas, and Cloudinary",
   alternates: {
-    canonical: `${SITE_URL}/projects/campsite-review`,
+    canonical: absoluteUrl("/projects/campsite-review"),
   },
   openGraph: {
     title: "Campsite Review Explorer Case Study",
     description:
       "Full‑stack JavaScript app for browsing campsite reviews with CRUD APIs, MongoDB Atlas, and Cloudinary",
-    url: `${SITE_URL}/projects/campsite-review`,
+    url: absoluteUrl("/projects/campsite-review"),
     images: [
       {
         url: "/image/ayla.jpg",

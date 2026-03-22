@@ -1,21 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { experiences } from "@/utils/data/experience";
+import {
+  absoluteUrl,
+  getSocialLink,
+  siteConfig,
+} from "@/utils/data/site-config";
 
-const SITE_URL = "https://kejian-tong.github.io";
+const entityUrl = absoluteUrl("/kejian-tong");
+const githubUrl = getSocialLink("GitHub")?.href;
+const linkedInUrl = getSocialLink("LinkedIn")?.href;
+const scholarUrl = getSocialLink("Google Scholar")?.href;
 
 export const metadata: Metadata = {
-  title: "Kejian Tong - Software Engineer and AI Researcher",
-  description:
-    "Kejian Tong is a software engineer and AI researcher specializing in artificial intelligence, machine learning, deep learning, large language models, and natural language processing. He earned his Master of Science in Computer Science from Northeastern University.",
+  title: {
+    absolute: siteConfig.entityTitle,
+  },
+  description: siteConfig.entityDescription,
   alternates: {
-    canonical: `${SITE_URL}/kejian-tong`,
+    canonical: entityUrl,
   },
   openGraph: {
-    title: "Kejian Tong - Software Engineer and AI Researcher",
-    description:
-      "Software Engineer and AI Researcher specializing in artificial intelligence, machine learning, deep learning, large language models, and natural language processing.",
-    url: `${SITE_URL}/kejian-tong`,
+    title: siteConfig.entityTitle,
+    description: siteConfig.entityDescription,
+    url: entityUrl,
     type: "profile",
   },
 };
@@ -25,18 +33,17 @@ export default function KejianTongPage() {
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `${SITE_URL}#kejian-tong`,
-    name: "Kejian Tong",
+    "@id": `${siteConfig.url}#kejian-tong`,
+    name: siteConfig.name,
     givenName: "Kejian",
     familyName: "Tong",
     // point the person URL at the dedicated entity page, not the site root
-    url: `${SITE_URL}/kejian-tong`,
+    url: entityUrl,
     mainEntityOfPage: {
       "@type": "ProfilePage",
-      "@id": `${SITE_URL}/kejian-tong`,
+      "@id": entityUrl,
     },
-    description:
-      "Software Engineer and AI Researcher specializing in artificial intelligence, machine learning, deep learning, large language models, and natural language processing.",
+    description: siteConfig.entityDescription,
     jobTitle: ["Software Engineer", "AI Researcher"],
     hasOccupation: [
       { "@type": "Occupation", name: "Software Engineer" },
@@ -66,10 +73,10 @@ export default function KejianTongPage() {
       "Cloud Architecture",
     ],
     sameAs: [
-      "https://github.com/kejian-tong",
-      "https://scholar.google.com/citations?user=JUGvC_oAAAAJ&hl=en",
+      ...(githubUrl ? [githubUrl] : []),
+      ...(scholarUrl ? [scholarUrl] : []),
       "https://www.researchgate.net/profile/Kejian-Tong",
-      "https://www.linkedin.com/in/tongoliver/",
+      ...(linkedInUrl ? [linkedInUrl] : []),
       "https://orcid.org/0009-0002-5127-2711",
       "https://ieeexplore.ieee.org/author/658338598189173",
       "https://www.semanticscholar.org/author/Kejian-Tong/2368457510",
@@ -77,7 +84,7 @@ export default function KejianTongPage() {
       "https://www.techrxiv.org/users/934258",
       "https://www.wikidata.org/wiki/Q137643975",
     ],
-    image: `${SITE_URL}/card.png`,
+    image: absoluteUrl("/card.png"),
   };
 
   const breadcrumbJsonLd = {
@@ -88,13 +95,13 @@ export default function KejianTongPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: SITE_URL,
+        item: siteConfig.url,
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: "Kejian Tong",
-        item: `${SITE_URL}/kejian-tong`,
+        name: siteConfig.name,
+        item: entityUrl,
       },
     ],
   };

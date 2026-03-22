@@ -1,13 +1,6 @@
 import type { MetadataRoute } from "next";
 import { projectsData } from "@/utils/data/projects-data";
-
-const SITE_URL = "https://kejian-tong.github.io";
-
-function canonicalize(path: string) {
-  let p = path.startsWith("/") ? path : `/${path}`;
-  if (p !== "/") p = p.replace(/\/+$/, "");
-  return p === "/" ? SITE_URL : `${SITE_URL}${p}`;
-}
+import { absoluteUrl } from "@/utils/data/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -20,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return routes.map((path) => ({
-    url: canonicalize(path),
+    url: absoluteUrl(path),
     lastModified,
   }));
 }

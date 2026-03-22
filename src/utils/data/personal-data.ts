@@ -1,4 +1,5 @@
 import type { SocialLink } from "@/utils/types/content";
+import { siteConfig } from "@/utils/data/site-config";
 
 export interface PersonalData {
   name: string;
@@ -18,25 +19,18 @@ export interface PersonalData {
 }
 
 export const personalData: PersonalData = {
-  name: "Kejian Tong",
-  role: "Software Engineer / AI Researcher",
+  name: siteConfig.name,
+  role: siteConfig.role,
   summary:
     "I'm a Software Engineer and AI Researcher specializing in backend architecture, distributed systems, artificial intelligence, and machine learning. I focus on building scalable, intelligent systems that power modern enterprise workflows and data-driven services.",
   profileImage: "/profile.png",
-  email: "tongcs2021@gmail.com",
-  location: "Seattle, WA",
+  email: siteConfig.email,
+  location: siteConfig.location,
   // Add your resume URL here when you want to show it again (e.g., Google Drive or PDF link)
   // resumeUrl: "",
-  devUsername: "olivertong",
+  devUsername: siteConfig.devUsername,
   showBlog: false,
-  socialLinks: [
-    { label: "GitHub", href: "https://github.com/kejian-tong" },
-    {
-      label: "Google Scholar",
-      href: "https://scholar.google.com/citations?user=JUGvC_oAAAAJ&hl=en",
-    },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/tongoliver/" },
-  ],
+  socialLinks: [...siteConfig.socialLinks] satisfies SocialLink[],
   highlights: [
     "Backend engineering & distributed systems",
     "AI/ML research & applied machine learning",

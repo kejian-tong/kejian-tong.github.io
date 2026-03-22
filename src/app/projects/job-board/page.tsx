@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-
-const SITE_URL = "https://kejian-tong.github.io";
+import { absoluteUrl } from "@/utils/data/site-config";
 
 export const metadata: Metadata = {
   title: "Job Board Platform Case Study",
   description:
     "Full-stack job discovery with scalable APIs and a responsive UI",
   alternates: {
-    canonical: `${SITE_URL}/projects/job-board`,
+    canonical: absoluteUrl("/projects/job-board"),
   },
   openGraph: {
     title: "Job Board Platform Case Study",
     description:
       "Full-stack job discovery with scalable APIs and a responsive UI",
-    url: `${SITE_URL}/projects/job-board`,
+    url: absoluteUrl("/projects/job-board"),
     images: [
       {
         url: "/image/travel.jpg",

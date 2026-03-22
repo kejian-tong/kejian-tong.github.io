@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-
-const SITE_URL = "https://kejian-tong.github.io";
+import { absoluteUrl } from "@/utils/data/site-config";
 
 export const metadata: Metadata = {
   title: "Twinder Microservice Case Study",
   description:
     "A scalable, event-driven service for high-volume swipe and match workloads",
   alternates: {
-    canonical: `${SITE_URL}/projects/twinder`,
+    canonical: absoluteUrl("/projects/twinder"),
   },
   openGraph: {
     title: "Twinder Microservice Case Study",
     description:
       "A scalable, event-driven service for high-volume swipe and match workloads",
-    url: `${SITE_URL}/projects/twinder`,
+    url: absoluteUrl("/projects/twinder"),
     images: [
       {
         url: "/image/crefin.jpg",
