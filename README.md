@@ -38,6 +38,7 @@ public/
 ```bash
 nvm use
 npm install
+npm run test:e2e:install   # one-time browser install if you want to run Playwright locally
 npm run dev
 # open http://localhost:3000
 ```
@@ -47,12 +48,14 @@ Use Node 20 LTS. The repo's GitHub Pages workflow already builds with Node 20, a
 ## Build and preview the static export
 
 This repo uses `output: "export"`, so `next build` writes the deployable site directly to `out/`.
+`npm run type-check` is intentionally source-only so it works on a clean checkout without generated `.next/types`; `npm run build` is the step that validates the full Next.js generated type surface.
 
 ```bash
 npm run type-check
 npm run lint
 npm run build      # outputs the static site into ./out
 npm run preview    # serves ./out locally
+npm run test:e2e:install   # one-time local Playwright browser install
 npm run test:e2e   # builds and runs Playwright smoke tests
 ```
 
@@ -90,6 +93,7 @@ Blog posts are fetched from DEV using your `devUsername` in `personal-data.ts`. 
 - `npm run build` — create the static export in `out/`
 - `npm run preview` — serve the generated `out/` folder locally
 - `npm run start` — alias for `npm run preview`
+- `npm run test:e2e:install` — install the local Chromium binary for Playwright
 - `npm run test:e2e` — build and run Playwright smoke tests
 
 ## License

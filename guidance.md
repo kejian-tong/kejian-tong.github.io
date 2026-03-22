@@ -23,6 +23,7 @@ npm run build
 ```
 
 Use `npm run preview` when you need to verify the generated static output locally.
+`npm run type-check` intentionally avoids requiring generated `.next/types`; use `npm run build` to validate the full Next.js generated type surface.
 Run `npm run test:e2e` when a task changes routing, metadata, page composition, or interactive UI behavior.
 
 ## Editing expectations
