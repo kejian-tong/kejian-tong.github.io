@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-
-const SITE_URL = "https://kejian-tong.github.io";
+import { absoluteUrl } from "@/utils/data/site-config";
 
 export const metadata: Metadata = {
   title: "Discord Food Delivery Bot Case Study",
   description:
     "Java/JDA bot for food ordering and restaurant info with MongoDB Atlas and Fly.io",
   alternates: {
-    canonical: `${SITE_URL}/projects/discord-food-bot`,
+    canonical: absoluteUrl("/projects/discord-food-bot"),
   },
   openGraph: {
     title: "Discord Food Delivery Bot Case Study",
     description:
       "Java/JDA bot for food ordering and restaurant info with MongoDB Atlas and Fly.io",
-    url: `${SITE_URL}/projects/discord-food-bot`,
+    url: absoluteUrl("/projects/discord-food-bot"),
     images: [
       {
         url: "/image/real-estate.jpg",

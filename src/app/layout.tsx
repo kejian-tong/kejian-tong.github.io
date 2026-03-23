@@ -3,6 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import { Providers } from "@/app/providers";
 import Navbar from "@/app/components/layout/navbar";
 import Footer from "@/app/components/layout/footer";
+import { siteConfig } from "@/utils/data/site-config";
 import "@/app/css/globals.css";
 
 const inter = Inter({
@@ -17,16 +18,13 @@ const sora = Sora({
   display: "swap",
 });
 
-const SITE_URL = "https://kejian-tong.github.io";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Kejian Tong | Software Engineer | AI Researcher",
-    template: "%s | Kejian Tong",
+    default: siteConfig.defaultTitle,
+    template: siteConfig.titleTemplate,
   },
-  description:
-    "Official personal website of Kejian Tong — Software Engineer and AI Researcher specializing in backend architecture, distributed systems, agentic AI, LLM, RAG, prompt engineering, MCP, and NLP.",
+  description: siteConfig.description,
 
   // Google Search Console verification (meta name="google-site-verification")
   verification: {
@@ -35,11 +33,10 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
-    url: SITE_URL,
-    siteName: "Kejian Tong",
-    title: "Kejian Tong | Software Engineer | AI Researcher",
-    description:
-      "Official personal website of Kejian Tong — Software Engineer and AI Researcher specializing in backend architecture, distributed systems, agentic AI, LLM, RAG, prompt engineering, MCP, and NLP.",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.defaultTitle,
+    description: siteConfig.description,
     images: [
       {
         url: "/card.png",
@@ -52,9 +49,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Kejian Tong | Software Engineer | AI Researcher",
-    description:
-      "Official personal website of Kejian Tong — Software Engineer and AI Researcher specializing in backend architecture, distributed systems, agentic AI, LLM, RAG, prompt engineering, MCP, and NLP.",
+    title: siteConfig.defaultTitle,
+    description: siteConfig.description,
     images: ["/card.png"],
   },
 
@@ -77,9 +73,9 @@ export default function RootLayout({
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${SITE_URL}#website`,
-    name: "Kejian Tong",
-    url: SITE_URL,
+    "@id": `${siteConfig.url}#website`,
+    name: siteConfig.name,
+    url: siteConfig.url,
   };
 
   // Note: we intentionally do not declare a Person JSON-LD here.  the

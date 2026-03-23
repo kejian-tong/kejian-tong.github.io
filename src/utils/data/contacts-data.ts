@@ -1,3 +1,5 @@
+import { getSocialLink, siteConfig } from "@/utils/data/site-config";
+
 export interface ContactData {
   email: string;
   location: string;
@@ -7,9 +9,9 @@ export interface ContactData {
 }
 
 export const contactsData: ContactData = {
-  email: "tongcs2021@gmail.com",
-  location: "Seattle, WA",
-  github: "https://github.com/kejian-tong",
-  linkedIn: "https://www.linkedin.com/in/tongoliver/",
-  devUsername: "olivertong",
+  email: siteConfig.email,
+  location: siteConfig.location,
+  github: getSocialLink("GitHub")?.href ?? "",
+  linkedIn: getSocialLink("LinkedIn")?.href ?? "",
+  devUsername: siteConfig.devUsername,
 };

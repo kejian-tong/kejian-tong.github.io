@@ -1,4 +1,4 @@
-This is my personal site built with Next.js 14 (App Router), TypeScript, and Tailwind CSS. It’s exported as a fully static site and deployed automatically to GitHub Pages.
+This is my personal site built with Next.js 14 (App Router), TypeScript, and Tailwind CSS. It is statically exported and deployed automatically to GitHub Pages.
 
 ## Tech stack
 
@@ -36,18 +36,27 @@ public/
 ## Local development
 
 ```bash
+nvm use
 npm install
+npm run test:e2e:install   # one-time browser install if you want to run Playwright locally
 npm run dev
 # open http://localhost:3000
 ```
 
-## Build and static export
+Use Node 20 LTS. The repo's GitHub Pages workflow already builds with Node 20, and newer lint tooling emits engine warnings on Node 19.
 
-This repo is configured for static export (GitHub Pages):
+## Build and preview the static export
+
+This repo uses `output: "export"`, so `next build` writes the deployable site directly to `out/`.
+`npm run type-check` is intentionally source-only so it works on a clean checkout without generated `.next/types`; `npm run build` is the step that validates the full Next.js generated type surface.
 
 ```bash
-npm run build      # next build
-npx next export    # outputs static site into ./out
+npm run type-check
+npm run lint
+npm run build      # outputs the static site into ./out
+npm run preview    # serves ./out locally
+npm run test:e2e:install   # one-time local Playwright browser install
+npm run test:e2e   # builds and runs Playwright smoke tests
 ```
 
 ## Deployment (GitHub Pages)
@@ -62,8 +71,9 @@ After the workflow completes, the site is live at: <https://kejian-tong.github.i
 
 Edit the data files under `src/utils/data/`:
 
-- `personal-data.ts` — name, email, location, summary, social links, technical focus
-- `contacts-data.ts` — contact/social links
+- `site-config.ts` — canonical site URL, shared metadata, contact identity, and primary profiles
+- `personal-data.ts` — homepage summary, highlights, technical focus, and blog flag
+- `contacts-data.ts` — derived contact/social values used by the UI
 - `projects-data.ts` — project cards (title, summary, tags, slug, image). The card links to `/projects/[slug]`.
 - `educations.ts` — education timeline
 
@@ -71,15 +81,20 @@ Blog posts are fetched from DEV using your `devUsername` in `personal-data.ts`. 
 
 ## Notes
 
-- Experience (employers/professional roles) has been removed by design. Only personal summary, projects, and education are shown.
 - Images are served unoptimized to support static export (`images.unoptimized = true`).
-- The contact section uses a `mailto:` link (no EmailJS or server code required).
+- The contact section supports EmailJS when the `NEXT_PUBLIC_EMAILJS_*` variables are provided at build time, and falls back to `mailto:` when they are not.
+- `npm run start` and `npm run preview` both serve the generated `out/` folder for local verification.
+- Follow [`guidance.md`](./guidance.md) for all future agentic edits.
 
 ## Scripts
 
 - `npm run dev` — start dev server
-- `npm run build` — production build (static export compatible)
-- `npm run start` — serve built app (not needed for GitHub Pages)
+- `npm run type-check` — run TypeScript checks without requiring a prior build
+- `npm run build` — create the static export in `out/`
+- `npm run preview` — serve the generated `out/` folder locally
+- `npm run start` — alias for `npm run preview`
+- `npm run test:e2e:install` — install the local Chromium binary for Playwright
+- `npm run test:e2e` — build and run Playwright smoke tests
 
 ## License
 
