@@ -11,6 +11,13 @@ Last reviewed: 2026-05-13
 - `docs/codex/PROJECT_MEMORY.md`: durable project decisions.
 - `docs/codex/PROJECT_STATE.md`: current status, validation contract, and watch items.
 
+## Official Codex Basis
+
+- Official Codex best practices recommend keeping reusable workflow guidance in `AGENTS.md`, keeping the root file practical, and moving specialized details into referenced docs when it grows.
+- Official Codex MCP docs support project-scoped `.codex/config.toml` in trusted repositories.
+- Official Codex skills docs support repo-scoped skills under `.agents/skills`.
+- Official Codex best practices recommend adding tools only when they unlock a real workflow. This repo therefore keeps OpenAI Docs MCP and the static portfolio skill, but does not add Figma, browser, database, hooks, or custom subagents without a concrete recurring need.
+
 ## Recommended Skills
 
 - Use `$static-portfolio-maintenance` for normal work in this repo.
@@ -20,7 +27,8 @@ Last reviewed: 2026-05-13
 
 ## MCP
 
-- `openaiDeveloperDocs` is configured because OpenAI/Codex guidance changes over time and official docs should be the source of truth.
+- `openaiDeveloperDocs` is configured in `.codex/config.toml` because OpenAI/Codex guidance changes over time and official docs should be the source of truth.
+- `.codex/config.toml` is complete by design even though it only has one MCP server entry. Personal defaults such as model choice, sandboxing, or approval policy belong in a user's global Codex config, not in this public portfolio repository.
 - No Figma MCP is configured because this repo currently has no Figma-driven design workflow.
 - No custom content/CMS MCP is configured because the site content is local typed data.
 - No database MCP is configured because the deployed site is static and has no runtime database.

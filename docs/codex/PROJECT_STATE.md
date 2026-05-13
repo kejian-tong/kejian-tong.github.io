@@ -11,6 +11,7 @@ Last updated: 2026-05-13
 - Primary validation: TypeScript, ESLint, Next build, Playwright smoke tests.
 - Source layout: `src/app`, `src/components`, `src/content`, `src/config`, `src/domain`, and `src/styles`.
 - Project routes: typed `/projects/[slug]` static generation from `src/content/projects.ts`.
+- Root files are intentionally limited to tool entrypoints, public project entrypoints, and Codex maintenance entrypoints. See `docs/ARCHITECTURE.md`.
 
 ## Current Codex Context
 
@@ -21,6 +22,7 @@ Last updated: 2026-05-13
 - This repo now has repo-local skill guidance at `.agents/skills/static-portfolio-maintenance/SKILL.md`.
 - This repo now has a lightweight skill agent profile at `.agents/skills/static-portfolio-maintenance/agents/openai.yaml`.
 - This repo now has project-scoped OpenAI Docs MCP config in `.codex/config.toml`.
+- ESLint config is consolidated into `package.json` to keep the root smaller without changing lint behavior.
 - No repo-local hooks are enabled.
 - No standalone repo-specific custom subagents are configured.
 
