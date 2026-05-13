@@ -19,9 +19,10 @@ Last updated: 2026-05-13
 - This repo now has project memory in `docs/codex/PROJECT_MEMORY.md`.
 - This repo now has project state in `docs/codex/PROJECT_STATE.md`.
 - This repo now has repo-local skill guidance at `.agents/skills/static-portfolio-maintenance/SKILL.md`.
+- This repo now has a lightweight skill agent profile at `.agents/skills/static-portfolio-maintenance/agents/openai.yaml`.
 - This repo now has project-scoped OpenAI Docs MCP config in `.codex/config.toml`.
 - No repo-local hooks are enabled.
-- No repo-specific custom subagents are configured.
+- No standalone repo-specific custom subagents are configured.
 
 ## Validation Contract
 
@@ -46,10 +47,14 @@ Completed on 2026-05-13 with Node v20.20.1:
 - `npm audit --audit-level=moderate`
 - `quick_validate.py .agents/skills/static-portfolio-maintenance`
 - `.codex/config.toml` TOML parse check
+- `.github/workflows/*.yml` YAML parse check
 - Desktop and mobile Playwright browser smoke checks for `/` and `/projects/twinder` against `http://127.0.0.1:3000`
+- GitHub Actions `Deploy to GitHub Pages` succeeded on `origin/main`.
+- Live GitHub Pages smoke checks passed for `/`, `/kejian-tong`, and all project detail routes.
 
 ## Known Watch Items
 
 - Keep dependency audits clean where upstream packages provide a stable fix. If `npm audit` reports only a nested framework dependency with no stable fixed release, document it in the final handoff instead of using a risky force downgrade.
 - Keep GitHub Actions workflows singular and intentional. Disabled historical Pages workflows should not accumulate.
+- Keep GitHub Actions action versions current enough to avoid runtime deprecation warnings.
 - Keep content updates centralized in `src/content/` unless a page-specific case study genuinely needs custom rendering.

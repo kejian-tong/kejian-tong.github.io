@@ -6,6 +6,7 @@ Last reviewed: 2026-05-13
 
 - `AGENTS.md`: project-level instructions that Codex reads automatically.
 - `.agents/skills/static-portfolio-maintenance/SKILL.md`: repo-local skill for portfolio content, SEO, routing, CI, and GitHub Pages-safe maintenance.
+- `.agents/skills/static-portfolio-maintenance/agents/openai.yaml`: lightweight agent profile bundled with the repo-local skill.
 - `.codex/config.toml`: project-scoped OpenAI Docs MCP server configuration.
 - `docs/codex/PROJECT_MEMORY.md`: durable project decisions.
 - `docs/codex/PROJECT_STATE.md`: current status, validation contract, and watch items.
@@ -46,6 +47,6 @@ Do not add hooks just for completeness; lifecycle hooks add maintenance surface 
 
 ## Subagents And Custom Agents
 
-No repo-specific subagents are configured. For this small static site, a single agent is usually enough.
+No standalone repo-specific subagents are configured. The repo-local skill includes a lightweight agent profile, but ordinary work should still be handled by a single main agent.
 
 Use subagents only when the user explicitly asks for parallel work or when a broad review is split into independent tracks such as accessibility, dependency security, SEO, and CI.
