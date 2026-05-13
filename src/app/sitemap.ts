@@ -1,9 +1,11 @@
 import type { MetadataRoute } from "next";
 import { projectsData } from "@/utils/data/projects-data";
-import { absoluteUrl } from "@/utils/data/site-config";
+import { absoluteUrl, siteConfig } from "@/utils/data/site-config";
+
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  const lastModified = new Date(siteConfig.lastUpdated);
 
   const routes = [
     "/",

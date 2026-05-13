@@ -13,6 +13,15 @@ const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
+function getErrorMessage(err: unknown) {
+  if (err && typeof err === "object") {
+    const maybeError = err as { message?: unknown; text?: unknown };
+    if (typeof maybeError.text === "string") return maybeError.text;
+    if (typeof maybeError.message === "string") return maybeError.message;
+  }
+  return "";
+}
+
 export default function ContactSection() {
   const devToUrl = getDevToUrl(contactsData.devUsername);
   const socials = [
@@ -52,15 +61,6 @@ export default function ContactSection() {
     };
     const emailValid = /\S+@\S+\.\S+/.test(trimmed.email);
 
-    if (!emailEnabled) {
-      toast.error("Email form isn't configured yet. Falling back to mailto.");
-      window.location.href = `mailto:${
-        contactsData.email
-      }?subject=${encodeURIComponent(trimmed.title)}&body=${encodeURIComponent(
-        trimmed.message
-      )}`;
-      return;
-    }
     if (trimmed.company) return; // honeypot: silently drop
     if (!trimmed.name || !trimmed.email || !trimmed.title || !trimmed.message) {
       toast.error("Please fill in your name, email, title, and message.");
@@ -68,6 +68,15 @@ export default function ContactSection() {
     }
     if (!emailValid) {
       toast.error("Please enter a valid email address.");
+      return;
+    }
+    if (!emailEnabled) {
+      toast.error("Email form isn't configured yet. Falling back to mailto.");
+      const subject = encodeURIComponent(trimmed.title);
+      const body = encodeURIComponent(
+        `${trimmed.message}\n\nFrom: ${trimmed.name} <${trimmed.email}>`,
+      );
+      window.location.href = `mailto:${contactsData.email}?subject=${subject}&body=${body}`;
       return;
     }
     setSubmitting(true);
@@ -87,10 +96,9 @@ export default function ContactSection() {
       );
       toast.success("Thanks! Your message has been sent.");
       setForm({ name: "", email: "", title: "", message: "", company: "" });
-    } catch (err: any) {
+    } catch (err: unknown) {
       // Improve diagnostics: surface common EmailJS errors
-      const msg: string =
-        (typeof err === "object" && (err?.text || err?.message)) || "";
+      const msg = getErrorMessage(err);
       if (msg.includes("origin") || msg.includes("Origin is not allowed")) {
         toast.error(
           "EmailJS blocked this domain. Add your site URL to Allowed Origins in EmailJS settings."
@@ -206,6 +214,7 @@ export default function ContactSection() {
               value={form.company}
               onChange={handleChange}
               className="hidden"
+              aria-hidden="true"
               autoComplete="off"
               tabIndex={-1}
             />
@@ -213,6 +222,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={submitting}
+                aria-busy={submitting}
                 className="rounded-full bg-white px-6 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100 disabled:opacity-60"
               >
                 {submitting ? "Sending…" : "Send message"}

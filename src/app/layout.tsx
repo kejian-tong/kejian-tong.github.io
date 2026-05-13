@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     template: siteConfig.titleTemplate,
   },
   description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "technology",
 
   // Google Search Console verification (meta name="google-site-verification")
   verification: {
@@ -33,6 +38,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
+    locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
     title: siteConfig.defaultTitle,
@@ -76,6 +82,7 @@ export default function RootLayout({
     "@id": `${siteConfig.url}#website`,
     name: siteConfig.name,
     url: siteConfig.url,
+    inLanguage: "en-US",
   };
 
   // Note: we intentionally do not declare a Person JSON-LD here.  the

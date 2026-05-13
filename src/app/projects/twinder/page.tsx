@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { absoluteUrl } from "@/utils/data/site-config";
 
 export const metadata: Metadata = {
@@ -91,12 +92,12 @@ export default function Page() {
         design choices and tradeoffs.
       </p>
       <p className="mt-8">
-        <a
+        <Link
           href="/#projects"
           className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300"
         >
           ← Back to projects
-        </a>
+        </Link>
       </p>
     </article>
   );

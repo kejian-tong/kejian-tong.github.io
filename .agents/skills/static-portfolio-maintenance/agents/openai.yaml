@@ -1,0 +1,4 @@
+interface:
+  display_name: "Static Portfolio Maintenance"
+  short_description: "Portfolio maintenance workflow"
+  default_prompt: "Maintain this static portfolio while preserving GitHub Pages export compatibility and running the required checks."

@@ -1,8 +1,8 @@
-This is my personal site built with Next.js 14 (App Router), TypeScript, and Tailwind CSS. It is statically exported and deployed automatically to GitHub Pages.
+This is my personal site built with Next.js 15 (App Router), TypeScript, and Tailwind CSS. It is statically exported and deployed automatically to GitHub Pages.
 
 ## Tech stack
 
-- Next.js 14 (App Router, static export)
+- Next.js 15 (App Router, static export)
 - TypeScript
 - Tailwind CSS
 - Framer Motion (subtle animations)
@@ -43,7 +43,7 @@ npm run dev
 # open http://localhost:3000
 ```
 
-Use Node 20 LTS. The repo's GitHub Pages workflow already builds with Node 20, and newer lint tooling emits engine warnings on Node 19.
+Use Node 20.19 or newer. The repo's GitHub Pages workflow builds with Node 20, and current lint tooling expects a recent Node 20 runtime.
 
 ## Build and preview the static export
 
@@ -54,9 +54,11 @@ This repo uses `output: "export"`, so `next build` writes the deployable site di
 npm run type-check
 npm run lint
 npm run build      # outputs the static site into ./out
+npm run validate   # type-check + lint + build
 npm run preview    # serves ./out locally
 npm run test:e2e:install   # one-time local Playwright browser install
 npm run test:e2e   # builds and runs Playwright smoke tests
+npm run test:e2e:built # runs Playwright against an existing ./out build
 ```
 
 ## Deployment (GitHub Pages)
@@ -94,7 +96,9 @@ Blog posts are fetched from DEV using your `devUsername` in `personal-data.ts`. 
 - `npm run preview` — serve the generated `out/` folder locally
 - `npm run start` — alias for `npm run preview`
 - `npm run test:e2e:install` — install the local Chromium binary for Playwright
+- `npm run test:e2e:built` — run Playwright against an existing `out/` build
 - `npm run test:e2e` — build and run Playwright smoke tests
+- `npm run validate` — run TypeScript, ESLint, and production build checks
 
 ## License
 

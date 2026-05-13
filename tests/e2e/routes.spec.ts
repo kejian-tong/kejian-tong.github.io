@@ -16,6 +16,16 @@ const routes = [
     heading: "Job Board Platform",
     canonical: "https://kejian-tong.github.io/projects/job-board",
   },
+  {
+    path: "/projects/discord-food-bot",
+    heading: "Discord Food Delivery Bot",
+    canonical: "https://kejian-tong.github.io/projects/discord-food-bot",
+  },
+  {
+    path: "/projects/campsite-review",
+    heading: "Campsite Review Explorer",
+    canonical: "https://kejian-tong.github.io/projects/campsite-review",
+  },
 ];
 
 for (const route of routes) {
