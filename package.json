@@ -11,7 +11,7 @@
     "build": "next build",
     "export": "next build",
     "start": "serve out",
-    "lint": "eslint src tests next.config.js playwright.config.ts --max-warnings=0",
+    "lint": "eslint src tests next.config.js playwright.config.ts tailwind.config.js postcss.config.js --max-warnings=0",
     "preview": "serve out",
     "test:e2e:install": "playwright install chromium",
     "test:e2e:built": "playwright test",

@@ -7,9 +7,9 @@ description: Maintain the kejian-tong.github.io static Next.js portfolio. Use fo
 
 ## Core Workflow
 
-1. Read `AGENTS.md`, `guidance.md`, `PROJECT_STATE.md`, `PROJECT_MEMORY.md`, and `SKILLS_PLUGINS.md` before substantial edits.
+1. Read `AGENTS.md`, `docs/codex/guidance.md`, `docs/codex/PROJECT_STATE.md`, `docs/codex/PROJECT_MEMORY.md`, and `docs/codex/SKILLS_PLUGINS.md` before substantial edits.
 2. Inspect the relevant route, component, data, workflow, or documentation files before changing behavior.
-3. Keep portfolio content in `src/utils/data/` when possible. Use page files only for route-specific case study copy or metadata.
+3. Keep portfolio content in `src/content/` when possible. Use page files only for route-specific case study copy or metadata.
 4. Preserve static export and GitHub Pages compatibility.
 5. Update docs in the same change when routing, deployment, validation, Codex guidance, or public configuration changes.
 6. Run the smallest complete validation set for the change and report anything that could not be run.
@@ -23,10 +23,10 @@ description: Maintain the kejian-tong.github.io static Next.js portfolio. Use fo
 
 ## Content And SEO
 
-- `src/utils/data/site-config.ts` is the canonical source for URL, title, description, email, location, DEV username, and primary social links.
+- `src/config/site.ts` is the canonical source for URL, title, description, email, location, DEV username, and primary social links.
 - Keep home metadata, `/kejian-tong` entity metadata, sitemap, robots, and JSON-LD consistent.
 - Keep `/kejian-tong` as the single canonical Person JSON-LD entity page.
-- When adding a project, update `projects-data.ts`, add or verify the route under `src/app/projects/`, update tests when needed, and confirm sitemap inclusion.
+- When adding a project, update `src/content/projects.ts`, verify `/projects/[slug]`, update tests when needed, and confirm sitemap inclusion.
 
 ## Codex Tooling
 

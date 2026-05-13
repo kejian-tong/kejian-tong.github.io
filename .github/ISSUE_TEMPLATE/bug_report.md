@@ -36,3 +36,8 @@ If applicable, add screenshots to help explain your problem.
 
 **Additional context**
 Add any other context about the problem here.
+
+**Validation context**
+- URL or route:
+- Browser/device:
+- Console errors, if any:

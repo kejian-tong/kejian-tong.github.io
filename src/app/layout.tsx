@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
 import { Providers } from "@/app/providers";
-import Navbar from "@/app/components/layout/navbar";
-import Footer from "@/app/components/layout/footer";
-import { siteConfig } from "@/utils/data/site-config";
-import "@/app/css/globals.css";
+import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
+import { siteConfig } from "@/config/site";
+import "@/styles/globals.css";
 
 const inter = Inter({
   subsets: ["latin"],

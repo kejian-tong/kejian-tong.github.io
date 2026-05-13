@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { experiences } from "@/utils/data/experience";
+import { experiences } from "@/content/experience";
 import {
   absoluteUrl,
   getSocialLink,
   siteConfig,
-} from "@/utils/data/site-config";
+} from "@/config/site";
 
 const entityUrl = absoluteUrl("/kejian-tong");
 const githubUrl = getSocialLink("GitHub")?.href;

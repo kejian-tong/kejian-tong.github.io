@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import HeroSection from "@/app/components/sections/hero";
-import AboutSection from "@/app/components/sections/about";
-import SkillsSection from "@/app/components/sections/skills";
-import ProjectsSection from "@/app/components/sections/projects";
-import PublicationsSection from "@/app/components/sections/publications";
-import EducationSection from "@/app/components/sections/education";
-import ExperienceSection from "@/app/components/sections/experience";
-import ContactSection from "@/app/components/sections/contact";
-import BlogSection, { type BlogPost } from "@/app/components/sections/blog";
-import { personalData } from "@/utils/data/personal-data";
-import { siteConfig } from "@/utils/data/site-config";
-import devtoFallback from "@/utils/data/devto-fallback.json";
+import HeroSection from "@/components/sections/hero";
+import AboutSection from "@/components/sections/about";
+import SkillsSection from "@/components/sections/skills";
+import ProjectsSection from "@/components/sections/projects";
+import PublicationsSection from "@/components/sections/publications";
+import EducationSection from "@/components/sections/education";
+import ExperienceSection from "@/components/sections/experience";
+import ContactSection from "@/components/sections/contact";
+import BlogSection, { type BlogPost } from "@/components/sections/blog";
+import { personalData } from "@/content/personal";
+import { siteConfig } from "@/config/site";
+import devtoFallback from "@/content/devto-fallback.json";
 
 export const metadata: Metadata = {
   alternates: {

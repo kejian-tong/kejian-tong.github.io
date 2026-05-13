@@ -13,25 +13,25 @@ This is my personal site built with Next.js 15 (App Router), TypeScript, and Tai
 ```text
 src/
   app/
-    components/
-      layout/          # Navbar, Footer
-      sections/        # Hero, About, Projects, Skills, Education, Blog, Contact
-      ui/              # Small UI primitives (section heading, theme toggle)
-    css/globals.css    # Global styles (Tailwind)
     layout.tsx         # App shell
     page.tsx           # Home page composition
     not-found.tsx      # 404 page
     projects/
-      twinder/
-        page.tsx       # Case study
-      job-board/
-        page.tsx       # Case study
-  utils/
-    data/              # Typed content (personal, contacts, projects, education)
-    types/             # Shared interfaces
+      [slug]/
+        page.tsx       # Typed dynamic case studies
+  components/
+    layout/            # Navbar, Footer
+    sections/          # Hero, About, Projects, Skills, Education, Blog, Contact
+    ui/                # Small UI primitives (section heading, theme toggle)
+  config/              # Site-level canonical config and URL helpers
+  content/             # Typed content (personal, contacts, projects, education)
+  domain/              # Shared content interfaces
+  styles/globals.css   # Global styles (Tailwind)
 public/
   image/               # Static images served from /image/*
 ```
+
+For the full architecture contract, see [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md).
 
 ## Local development
 
@@ -71,22 +71,22 @@ After the workflow completes, the site is live at: <https://kejian-tong.github.i
 
 ## Customizing content
 
-Edit the data files under `src/utils/data/`:
+Edit content under `src/content/` and shared site config under `src/config/`:
 
-- `site-config.ts` — canonical site URL, shared metadata, contact identity, and primary profiles
-- `personal-data.ts` — homepage summary, highlights, technical focus, and blog flag
-- `contacts-data.ts` — derived contact/social values used by the UI
-- `projects-data.ts` — project cards (title, summary, tags, slug, image). The card links to `/projects/[slug]`.
+- `src/config/site.ts` — canonical site URL, shared metadata, contact identity, and primary profiles
+- `personal.ts` — homepage summary, highlights, technical focus, and blog flag
+- `contacts.ts` — derived contact/social values used by the UI
+- `projects.ts` — project cards and typed case-study content. Cards link to `/projects/[slug]`.
 - `educations.ts` — education timeline
 
-Blog posts are fetched from DEV using your `devUsername` in `personal-data.ts`. If you don’t want the blog section, remove the `BlogSection` from `src/app/page.tsx`.
+Blog posts are fetched from DEV using your `devUsername` in `personal.ts`. If you don’t want the blog section, set `showBlog` to `false`.
 
 ## Notes
 
 - Images are served unoptimized to support static export (`images.unoptimized = true`).
 - The contact section supports EmailJS when the `NEXT_PUBLIC_EMAILJS_*` variables are provided at build time, and falls back to `mailto:` when they are not.
 - `npm run start` and `npm run preview` both serve the generated `out/` folder for local verification.
-- Follow [`guidance.md`](./guidance.md) for all future agentic edits.
+- Follow [`AGENTS.md`](./AGENTS.md) and [`docs/codex/guidance.md`](./docs/codex/guidance.md) for all future agentic edits.
 
 ## Scripts
 

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
-import { projectsData } from "@/utils/data/projects-data";
-import { absoluteUrl, siteConfig } from "@/utils/data/site-config";
+import { projectsData } from "@/content/projects";
+import { absoluteUrl, siteConfig } from "@/config/site";
 
 export const dynamic = "force-static";
 
