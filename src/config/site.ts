@@ -2,11 +2,11 @@ import type { SocialLink } from "@/domain/content";
 
 export const siteConfig = {
   name: "Kejian Tong",
-  role: "Software Engineer / AI Researcher",
+  role: "Software Engineer · AI Researcher",
   url: "https://kejian-tong.github.io",
   lastUpdated: "2026-05-13",
   email: "tongcs2021@gmail.com",
-  location: "Seattle, WA",
+  location: "",
   devUsername: "olivertong",
   defaultTitle: "Kejian Tong | Software Engineer | AI Researcher",
   titleTemplate: "%s | Kejian Tong",
